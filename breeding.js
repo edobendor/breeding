@@ -418,7 +418,7 @@ document.addEventListener('change', async e => {
   if (e.target.id !== 'fFiles') return;
   for (const f of [...e.target.files]) {
     try {
-      const blob = await scaled(f, 1600, 0.8), small = await scaled(f, 200, 0.6);
+      const blob = await scaled(f, 2400, 0.9), small = await scaled(f, 320, 0.72);   // full photo close to the camera's own quality; a preview sharp enough for a phone screen
       form.photos.push({ id: uid(), blob, thumb: await toB64(small) });
     } catch (err) { toast(t('badPhoto')); }
   }
