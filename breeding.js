@@ -18,6 +18,30 @@ const ckey = s => (String(s || '').toUpperCase().match(/[A-Z]+|\d+/g) || []).map
 
 // ---------- languages ----------
 const L = {
+  af: {
+    title: "Teling", loginTitle: "Meld aan", user: "Gebruikersnaam", pin: "Persoonlike kode", login: "Meld aan", logout: "Meld af",
+    badLogin: "Verkeerde gebruikersnaam of kode", locked: "Hierdie gebruiker is gesluit. Kontak die bestuurder.", offline: "Geen verbinding met die bediener nie", allTeams: "Alle spanne",
+    code: "Seleksiekode", open: "Maak oop", recent: "Bestaande seleksies", searchHint: "Tik deel van die kode en kies uit die lys. Koppeltekens en nulle maak nie saak nie.",
+    pickOne: "Verskeie soortgelyke kodes. Kies een uit die lys.", newCode: "Nuwe kode, nie in die lys nie. As jy 'n bestaande seleksie bedoel het, kies dit:",
+    noMatch: "Geen bestaande seleksie pas nie. \"Maak oop\" skep 'n nuwe kode.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
+    back: "Terug", backNoSave: "Terug sonder om te stoor", newEval: "+ Nuwe evaluasie", history: "Geskiedenis",
+    stage: "Stadium", mother: "Moederboom", graft: "Ge\u00ebnt", when: "Tyd van evaluasie", harvest: "By oes", storage: "Na koelopberging",
+    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", addPhoto: "\ud83d\udcf7 Neem of kies foto's",
+    decision: "Besluit (opsioneel)", d_keep: "Hou dop", d_graft: "Ent", d_advance: "Bevorder", d_discard: "Verwerp", save: "Stoor",
+    saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
+    installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
+    installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie",
+    f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
+    f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
+    h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
+    f_skin: "Skilkleur", f_flesh: "Vleiskleur", f_fruitSet: "Vrugset", h_fruitSet: "1 = swak \u00b7 5 = oorvloedig", f_tree: "Boom", ph_tree: "Groeikrag, gesondheid, groeiwyse",
+    f_bloom: "Blom", ph_bloom: "Volblom saam met...", f_weeks: "Weke in koelopberging", f_shrivel: "Verrimpeling", f_ib: "Interne verbruining",
+    f_pos: "Positiewe", f_neg: "Negatiewe", f_note: "Notas",
+    c_R: "Rooi", c_P: "Pers", c_B: "Swart", c_Y: "Geel", c_G: "Groen", c_O: "Oranje", c_M: "Gespikkel", c_W: "Wit", c_RY: "Rooi-geel",
+    l_none: "Geen", l_light: "Lig", l_heavy: "Beduidend",
+    n_size: "Grootte", n_mm: "mm", n_yield: "Opbrengs", n_weeks: "weke gestoor", n_firm: "Druk", n_set: "Set"
+  },
   he: {
     title: 'טיפוח', loginTitle: 'כניסה', user: 'שם משתמש', pin: 'קוד אישי', login: 'כניסה', logout: 'יציאה',
     badLogin: 'שם משתמש או קוד שגויים', locked: 'המשתמש ננעל. פנה למנהל.', offline: 'אין חיבור לשרת', allTeams: 'כל הצוותים',
@@ -64,7 +88,10 @@ const L = {
   }
 };
 let lang = localStorage.getItem('br_lang') || '';
-const t = k => (L[lang || 'he'][k]) ?? L.he[k] ?? k;
+const t = k => (L[lang || 'he'][k]) ?? L.en[k] ?? L.he[k] ?? k;
+// Cultirex users get their own sign-in screen (a Cape photo) and Afrikaans in the language list.
+// Before sign-in the team is not known yet, so the device remembers the last team that signed in.
+const cultirex = () => B.token ? myTeam() === 'Cultirex' : (localStorage.getItem('br_lastteam') || (/^he/i.test(navigator.language || '') ? '' : 'Cultirex')) === 'Cultirex';
 
 // The header carries the team's own name: Cultirex users see Cultirex, not Ben Dor.
 const teamName = () => { const x = myTeam(); return x === 'Ben Dor' && (lang || 'he') === 'he' ? 'בן דור' : x; };
@@ -220,12 +247,13 @@ function renderTop() {
   const n = waiting();
   $('#top').innerHTML = `<div class="title">${esc(title())}</div><div class="right">
     ${B.token ? `<button data-act="sync">${busy ? '⟳' : n ? '⏳ ' + n : '✓'}</button>` : ''}
-    <select id="langSel" aria-label="language"><option value="he"${(lang || 'he') === 'he' ? ' selected' : ''}>עברית</option><option value="en"${lang === 'en' ? ' selected' : ''}>English</option></select>
+    <select id="langSel" aria-label="language"><option value="he"${(lang || 'he') === 'he' ? ' selected' : ''}>עברית</option><option value="en"${lang === 'en' ? ' selected' : ''}>English</option>${cultirex() || lang === 'af' ? `<option value="af"${lang === 'af' ? ' selected' : ''}>Afrikaans</option>` : ''}</select>
     ${B.token ? `<button data-act="logout">${esc(t('logout'))}</button>` : ''}</div>`;
 }
 function render() {
   document.documentElement.lang = lang || 'he';
-  document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+  document.documentElement.dir = (lang || 'he') === 'he' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('cape', !B.token && cultirex());
   document.title = title();
   renderTop();
   const app = $('#app');
@@ -406,6 +434,7 @@ document.addEventListener('submit', async e => {
       if (j.ok) {
         localStorage.setItem('br_lastuser', user);
         B.token = j.token; B.me = j.me; B.team = j.me.team; B.codes = []; B.cache = {};
+        localStorage.setItem('br_lastteam', j.me.team);
         if (!lang) { lang = j.me.team === 'Ben Dor' ? 'he' : 'en'; localStorage.setItem('br_lang', lang); }   // first sign-in: partners outside Israel start in English
         persist(); view = 'home'; render(); loadCodes(); sync(); return;
       }

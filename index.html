@@ -44,6 +44,9 @@
   #view .wait { position: absolute; color: #fff; font-size: 44px; }
   .thumbs .vid::after { content: '▶'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; text-shadow: 0 1px 6px #000; pointer-events: none; }
   .ev div { white-space: pre-line; }
+  body.cape::before { content: ''; position: fixed; inset: 0; z-index: -1;
+    background: linear-gradient(rgba(1,58,105,.25), rgba(1,58,105,0) 30%, rgba(0,0,0,.1)), url(cape.jpg) 46% center / cover no-repeat; }
+  body.cape .card { background: rgba(255,255,255,.9); }
   .back::before { content: '‹ '; }
   .back { background: none; border: 0; color: var(--brand-d); font-size: 16px; padding: 4px 0 10px; font-family: inherit; }
 </style>

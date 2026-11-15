@@ -1,6 +1,6 @@
 // Network first, cache fallback: the app keeps opening in the orchard without reception.
-const CACHE = 'breeding-v1';
-const FILES = ['./', 'index.html', 'styles.css', 'config.js', 'breeding.js', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest'];
+const CACHE = 'breeding-v2';
+const FILES = ['./', 'index.html', 'styles.css', 'config.js', 'breeding.js', 'icon-192.png', 'icon-512.png', 'cape.jpg', 'manifest.webmanifest'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
