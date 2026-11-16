@@ -134,11 +134,11 @@ const plain = s => String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const loose = s => plain(s).replace(/0/g, '');
 function matches(q) {
   const list = B.codes.filter(c => c.team === myTeam()), p = plain(q), l = loose(q);
-  if (!p) return list.slice(0, 40);
+  if (!p) return list;                                   // nothing typed: the whole list, every variety of the team
   const a = list.filter(c => plain(c.code).startsWith(p));
   const b = list.filter(c => !a.includes(c) && loose(c.code).startsWith(l));
   const d = list.filter(c => !a.includes(c) && !b.includes(c) && loose(c.code).includes(l));
-  return a.concat(b, d).slice(0, 40);
+  return a.concat(b, d);
 }
 function codesOf(team) {
   const m = new Map();
@@ -148,7 +148,7 @@ function codesOf(team) {
     const c = m.get(k); c.n++;
     if (e.date >= c.last) { c.last = e.date; c.stage = e.stage; if (e.decision) c.decision = e.decision; }
   }
-  return [...m.values()].sort((x, y) => y.last.localeCompare(x.last));
+  return [...m.values()].sort((x, y) => x.code.localeCompare(y.code, 'en', { numeric: true }));   // by code: AR-1-2-3 before AR-1-2-13
 }
 let view = 'home', cur = '', busy = false;
 let form = null;      // { code, stage, kind, date, vals, decision, photos: [{id, blob, thumb}] }
@@ -279,7 +279,8 @@ function vHome() {
 function recentHtml() {
   const q = $('#code') ? $('#code').value : '', list = matches(q);
   if (!list.length && plain(q)) return `<div class="muted">${esc(t('noMatch'))}</div>`;
-  return list.length ? `<ul class="list">${list.map(c => `<li data-act="open" data-code="${esc(c.code)}" style="cursor:pointer"><span><span class="code">${esc(c.code)}</span><br><span class="muted">${dshow(c.last)} · ${esc(t(c.stage))} · ${c.n} ${esc(t('evals'))}</span></span>
+  const total = B.codes.filter(c => c.team === myTeam()).length;
+  return list.length ? `<div class="muted" style="margin-bottom:4px">${list.length === total ? total : list.length + ' / ' + total}</div><ul class="list">${list.map(c => `<li data-act="open" data-code="${esc(c.code)}" style="cursor:pointer"><span><span class="code">${esc(c.code)}</span><br><span class="muted">${dshow(c.last)} · ${esc(t(c.stage))} · ${c.n} ${esc(t('evals'))}</span></span>
     ${c.decision ? `<span class="pill ${c.decision === 'discard' ? 'bad' : 'ok'}">${esc(t('d_' + c.decision))}</span>` : ''}</li>`).join('')}</ul>` : `<div class="muted">${esc(t('none'))}</div>`;
 }
 function drawRecent() { const el = $('#recent'); if (el) el.innerHTML = recentHtml(); }
