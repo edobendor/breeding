@@ -21,9 +21,9 @@ const L = {
   af: {
     title: "Teling", loginTitle: "Meld aan", user: "Gebruikersnaam", pin: "Persoonlike kode", login: "Meld aan", logout: "Meld af",
     badLogin: "Verkeerde gebruikersnaam of kode", locked: "Hierdie gebruiker is gesluit. Kontak die bestuurder.", offline: "Geen verbinding met die bediener nie", allTeams: "Alle spanne",
-    code: "Seleksiekode", open: "Maak oop", recent: "Bestaande seleksies", searchHint: "Tik deel van die kode en kies uit die lys. Koppeltekens en nulle maak nie saak nie.",
+    code: "Seleksiekode", open: "Maak oop", recent: "Bestaande seleksies", searchHint: "Tik deel van die kode en kies uit die lys. Koppeltekens en nulle maak nie saak nie.", searchPh: "Soek of tik nuwe kode", newVar: "Nuwe seleksie:",
     pickOne: "Verskeie soortgelyke kodes. Kies een uit die lys.", newCode: "Nuwe kode, nie in die lys nie. As jy 'n bestaande seleksie bedoel het, kies dit:",
-    noMatch: "Geen bestaande seleksie pas nie. \"Maak oop\" skep 'n nuwe kode.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
+    noMatch: "Geen bestaande seleksie pas nie.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
     back: "Terug", backNoSave: "Terug sonder om te stoor", newEval: "+ Nuwe evaluasie", history: "Geskiedenis",
     stage: "Stadium", mother: "Moederboom", graft: "Ge\u00ebnt", when: "Tyd van evaluasie", harvest: "By oes", storage: "Na koelopberging",
     dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Kamera", addPhoto: "Galery",
@@ -31,7 +31,7 @@ const L = {
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
     installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
-    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die video is te lank, hou dit onder 15 sekondes", rawPhoto: "Foto bygevoeg sonder voorskou",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot (limiet 25 MB). Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie",
     f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
     f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
     h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
@@ -45,7 +45,7 @@ const L = {
   he: {
     title: 'טיפוח', loginTitle: 'כניסה', user: 'שם משתמש', pin: 'קוד אישי', login: 'כניסה', logout: 'יציאה',
     badLogin: 'שם משתמש או קוד שגויים', locked: 'המשתמש ננעל. פנה למנהל.', offline: 'אין חיבור לשרת', allTeams: 'כל הצוותים',
-    code: 'קוד זן', open: 'פתח', recent: 'זנים קיימים', searchHint: 'הקלד חלק מהקוד ובחר מהרשימה. אין צורך במקפים או באפסים.', pickOne: 'יש כמה זנים דומים. בחר מהרשימה.', newCode: 'קוד חדש, לא קיים ברשימה. אם התכוונת לזן קיים, בחר אותו:', noMatch: 'אין זן קיים שמתאים. לחיצה על "פתח" תיצור קוד חדש.', none: 'אין עדיין הערכות', evals: 'הערכות', typeCode: 'הקלד קוד זן',
+    code: 'קוד זן', open: 'פתח', recent: 'זנים קיימים', searchHint: 'הקלד חלק מהקוד ובחר מהרשימה. אין צורך במקפים או באפסים.', searchPh: 'חיפוש או קוד חדש', newVar: 'זן חדש:', pickOne: 'יש כמה זנים דומים. בחר מהרשימה.', newCode: 'קוד חדש, לא קיים ברשימה. אם התכוונת לזן קיים, בחר אותו:', noMatch: 'אין זן קיים שמתאים.', none: 'אין עדיין הערכות', evals: 'הערכות', typeCode: 'הקלד קוד זן',
     back: 'חזרה', backNoSave: 'חזרה בלי לשמור', newEval: '+ הערכה חדשה', history: 'היסטוריה',
     noneFor: 'אין עדיין הערכות לקוד הזה. אם הקוד קיים בכתיב אחר, בדוק ברשימה במסך הראשי.',
     stage: 'שלב', mother: 'עץ אם', graft: 'מורכב', when: 'מועד ההערכה', harvest: 'בקטיף', storage: 'אחרי קירור',
@@ -53,7 +53,7 @@ const L = {
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
-    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'הסרטון ארוך מדי, עד 15 שניות', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה',
+    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי (עד 25MB). צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה',
     f_plot: 'מיקום', ph_plot: 'אתר / חלקה / שורה', f_size: 'גודל פרי (מ"מ)', f_sizeClass: 'מיון גודל', ph_sizeClass: 'למשל A/AA/B', f_brix: 'בריקס', f_firm: 'מוצקות (ק"ג)',
     f_yield: 'צפי יבול', h_yield: '1 = נמוך · 3 = בינוני · 5 = גבוה מאוד', f_taste: 'טעם',
     h_taste: 'כיול: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'תיאור טעם ומרקם', ph_tasteNote: 'למשל: פריך, ארומטי, חמצמץ ליד הקליפה',
@@ -67,7 +67,7 @@ const L = {
   en: {
     title: 'Breeding', loginTitle: 'Sign in', user: 'User name', pin: 'Personal code', login: 'Sign in', logout: 'Sign out',
     badLogin: 'Wrong user name or code', locked: 'This user is locked. Contact the manager.', offline: 'No connection to the server', allTeams: 'All teams',
-    code: 'Variety code', open: 'Open', recent: 'Existing varieties', searchHint: 'Type part of the code and pick from the list. Hyphens and zeros do not matter.', pickOne: 'Several similar codes. Pick one from the list.', newCode: 'New code, not in the list. If you meant an existing variety, pick it:', noMatch: 'No existing variety matches. "Open" will create a new code.', none: 'No evaluations yet', evals: 'evaluations', typeCode: 'Type a variety code',
+    code: 'Variety code', open: 'Open', recent: 'Existing varieties', searchHint: 'Type part of the code and pick from the list. Hyphens and zeros do not matter.', searchPh: 'Search or type a new code', newVar: 'New variety:', pickOne: 'Several similar codes. Pick one from the list.', newCode: 'New code, not in the list. If you meant an existing variety, pick it:', noMatch: 'No existing variety matches.', none: 'No evaluations yet', evals: 'evaluations', typeCode: 'Type a variety code',
     back: 'Back', backNoSave: 'Back without saving', newEval: '+ New evaluation', history: 'History',
     noneFor: 'No evaluations for this code yet. If the code exists in another spelling, check the list on the main screen.',
     stage: 'Stage', mother: 'Mother tree', graft: 'Grafted', when: 'Evaluation time', harvest: 'At harvest', storage: 'After cold storage',
@@ -75,7 +75,7 @@ const L = {
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
-    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video is too long, keep it under 15 seconds', rawPhoto: 'Photo added without a preview',
+    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large (limit 25 MB). Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation',
     f_plot: 'Location', ph_plot: 'Site / block / row', f_size: 'Fruit size (mm)', f_sizeClass: 'Size classes', ph_sizeClass: 'e.g. A/AA/B', f_brix: 'Brix', f_firm: 'Pressure (kg)',
     f_yield: 'Yield expectation', h_yield: '1 = low · 3 = medium · 5 = very high', f_taste: 'Taste',
     h_taste: 'Calibration: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'Taste and texture', ph_tasteNote: 'e.g. crunchy, aromatic, acidic under the skin',
@@ -211,6 +211,37 @@ async function scaled(file, max, q) {
   return new Promise(res => c.toBlob(res, 'image/jpeg', q));
 }
 
+// ---------- previews kept on the phone ----------
+// The small previews of every photo of the team are stored on the phone, a page of rows at a time,
+// so a variety opens with its photos at once and also without reception. Only new rows are asked for later.
+const PAGE = 40, TH = {};
+let thBusy = false;
+async function thumbsLoad(team) {
+  if (TH[team]) return TH[team];
+  const o = TH[team] = { pages: [] };
+  try { const n = (await mget('thn:' + team)) || 0; for (let i = 0; i < n; i++) o.pages[i] = (await mget('th:' + team + ':' + i)) || []; } catch (e) { /* no storage: asked from the server each time */ }
+  if (view === 'card' && myTeam() === team) render();
+  return o;
+}
+async function syncThumbs(team) {
+  if (thBusy || !team) return; thBusy = true;
+  try {
+    const o = await thumbsLoad(team);
+    let i = o.pages.length && o.pages[o.pages.length - 1].length < PAGE ? o.pages.length - 1 : o.pages.length;   // the last page may have grown
+    for (;;) {
+      const j = await api('bthumbs', { team, from: i * PAGE, n: PAGE });
+      if (!j.ok) break;
+      if (j.total < o.pages.reduce((a, p) => a + p.length, 0)) { o.pages = []; i = 0; await mput('thn:' + team, 0); continue; }   // rows were removed in the sheet: start again
+      if (!j.photos.length) break;
+      o.pages[i] = j.photos; await mput('th:' + team + ':' + i, j.photos); await mput('thn:' + team, o.pages.length);
+      if (view === 'card' && myTeam() === team) render();
+      if ((i + 1) * PAGE >= j.total) break;
+      i++;
+    }
+  } catch (e) { /* offline: what the phone already has is used */ }
+  thBusy = false;
+}
+
 // ---------- server ----------
 async function api(action, payload = {}) {
   const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ action, btoken: B.token, ...payload }) });
@@ -227,7 +258,17 @@ async function sync() {
   try {
     if (B.evals.length) {
       const j = await api('bsave', { evals: B.evals });
-      if (j.ok) { B.evals.filter(e => j.done.includes(e.id)).forEach(e => keep(e.team, e.code, 'evals', e)); B.evals = B.evals.filter(e => !j.done.includes(e.id)); persist(); }
+      if (j.ok) {
+        B.evals.filter(e => j.done.includes(e.id)).forEach(e => {
+          const { edit, ...rec } = e;
+          if (edit) {   // a correction replaces the copy kept on the phone
+            const all = B.all[e.team] || [], i = all.findIndex(x => x.id === e.id); if (i >= 0) all[i] = rec;
+            const c = B.cache[tkey(e.team, e.code)]; if (c && c.evals) c.evals = c.evals.filter(x => x.id !== e.id);
+          }
+          keep(e.team, e.code, 'evals', rec);
+        });
+        B.evals = B.evals.filter(e => !j.done.includes(e.id)); persist();
+      }
     }
     for (const p of B.photos.slice()) {          // one photo per request keeps each upload small
       const blob = await mget(p.id);
@@ -245,7 +286,7 @@ async function loadCodes() {
   const team = myTeam();
   try {
     const j = await api('ball', { team });
-    if (j.ok) { B.all[team] = j.evals; B.codes = codesOf(team); persist(); if (view === 'home') drawRecent(); if (view === 'card') render(); }
+    if (j.ok) { B.all[team] = j.evals; B.codes = codesOf(team); persist(); if (view === 'home') drawRecent(); if (view === 'card') render(); syncThumbs(team); }
   } catch (e) { /* offline: the copy on the phone is used */ }
 }
 async function loadCode(code) {
@@ -304,11 +345,10 @@ function vLogin() {
 function vHome() {
   const teams = B.me.admin && B.me.teams && B.me.teams.length > 1
     ? `<select id="teamSel" style="margin-bottom:12px">${B.me.teams.map(x => `<option${myTeam() === x ? ' selected' : ''}>${esc(x)}</option>`).join('')}</select>` : '';
-  return `${installCard()}${teams}<div class="card"><h2>${esc(t('code'))}</h2>
-    <form id="find"><input id="code" class="codein" autocomplete="off" autocapitalize="characters" placeholder="${myTeam() === 'Cultirex' ? '07C07-10' : 'AS-5-13-68'}">
-    <div class="hint">${esc(t('searchHint'))}</div>
-    <button class="btn">${esc(t('open'))}</button></form></div>
-  <div class="card"><h2>${esc(t('recent'))}</h2><div id="recent">${recentHtml()}</div></div>`;
+  return `${installCard()}${teams}<div class="card">
+    <form id="find"><input id="code" class="codein" autocomplete="off" autocapitalize="characters" placeholder="${esc(t('searchPh'))}" aria-label="${esc(t('code'))}">
+    <button class="btn" id="newBtn" style="display:none"></button></form>
+    <div id="recent" style="margin-top:12px">${recentHtml()}</div></div>`;
 }
 function recentHtml() {
   const q = $('#code') ? $('#code').value : '', list = matches(q);
@@ -317,15 +357,24 @@ function recentHtml() {
   return list.length ? `<div class="muted" style="margin-bottom:4px">${list.length === total ? total : list.length + ' / ' + total}</div><ul class="list">${list.map(c => `<li data-act="open" data-code="${esc(c.code)}" style="cursor:pointer"><span><span class="code">${esc(c.code)}</span><br><span class="muted">${dshow(c.last)} · ${esc(t(c.stage))} · ${c.n} ${esc(t('evals'))}</span></span>
     ${c.decision ? `<span class="pill ${c.decision === 'discard' ? 'bad' : 'ok'}">${esc(t('d_' + c.decision))}</span>` : ''}</li>`).join('')}</ul>` : `<div class="muted">${esc(t('none'))}</div>`;
 }
-function drawRecent() { const el = $('#recent'); if (el) el.innerHTML = recentHtml(); }
+function drawRecent() {
+  const el = $('#recent'); if (el) el.innerHTML = recentHtml();
+  const b = $('#newBtn'), q = $('#code') ? $('#code').value.trim().toUpperCase().replace(/\s+/g, '-') : '';
+  if (!b) return;
+  const known = !ckey(q) || matches(q).length > 0;      // while the list still offers something, the list is the way in
+  b.style.display = known ? 'none' : ''; b.textContent = `${t('newVar')} ${q}`;     // the button exists only for a code that is not in the list (Enter opens any typed code)
+}
 
 // everything known about one code: what the server has plus what is still waiting on this phone
 function history(code) {
   const team = myTeam(), k = ckey(code), kept = B.cache[tkey(team, code)] || { evals: [], photos: [] };
   const mine = x => x.team === team && ckey(x.code) === k;
   const stored = (B.all[team] || []).filter(e => ckey(e.code) === k);
-  const c = { evals: stored.concat((kept.evals || []).filter(e => !stored.some(x => x.id === e.id))), photos: kept.photos || [] };
-  const evals = c.evals.concat(B.evals.filter(e => mine(e) && !c.evals.some(x => x.id === e.id)).map(e => ({ ...e, local: true })));
+  const c = { evals: stored.concat((kept.evals || []).filter(e => !stored.some(x => x.id === e.id))), photos: (kept.photos || []).slice() };
+  const ids = new Set(c.evals.map(e => e.id));       // previews kept on the phone fill in what was not asked from the server yet
+  (TH[team] ? TH[team].pages : []).forEach(pg => (pg || []).forEach(p => { if (ids.has(p.evalId) && !c.photos.some(x => x.id === p.id)) c.photos.push(p); }));
+  const pend = B.evals.filter(mine);   // a correction still waiting on the phone is shown instead of the stored copy
+  const evals = c.evals.filter(e => !pend.some(x => x.id === e.id)).concat(pend.map(e => ({ ...e, local: true })));
   const photos = c.photos.concat(B.photos.filter(p => mine(p) && !c.photos.some(x => x.id === p.id)).map(p => ({ ...p, local: true })));
   const key = e => e.date + (e.kind === 'storage' ? '1' : '0');
   return { evals: evals.sort((a, b) => key(b).localeCompare(key(a))), photos };
@@ -358,7 +407,7 @@ function vCard() {
     ${h.evals.length ? h.evals.map(e => `<div class="ev"><div class="h"><span>${dshow(e.date)} · ${esc(t(e.stage))} · ${esc(t(e.kind))}${e.local ? ' ⏳' : ''}</span>
       ${e.decision ? `<span class="pill ${e.decision === 'discard' ? 'bad' : 'ok'}">${esc(t('d_' + e.decision))}</span>` : ''}</div>
       <div class="nums">${nums(e)}</div>${texts(e)}
-      <div class="muted" style="font-size:13px">${esc(e.evaluator || '')}</div>
+      <div class="muted" style="font-size:13px;display:flex;justify-content:space-between;align-items:center"><span>${esc(e.evaluator || '')}</span><button type="button" data-act="edit" data-id="${esc(e.id)}" style="border:0;background:none;color:inherit;font:inherit;text-decoration:underline;padding:6px 0;cursor:pointer">✎ ${esc(t('edit'))}</button></div>
       <div class="thumbs">${h.photos.filter(p => p.evalId === e.id).map(p => `<span class="t${isVideo(p) ? ' vid' : ''}" title="${esc(p.name || '')}"><img src="data:image/jpeg;base64,${p.thumb || BLANK}" data-act="zoom" data-id="${p.id}" data-local="${p.local ? 1 : ''}" data-video="${isVideo(p) ? 1 : ''}" alt=""></span>`).join('')}</div></div>`).join('')
     : `<div class="muted">${esc(t('newCode'))}</div><div class="chips" style="margin-top:8px">${matches(cur).slice(0, 8).map(c => `<button data-act="open" data-code="${esc(c.code)}"><span class="code">${esc(c.code)}</span></button>`).join('')}</div>`}</div>`;
 }
@@ -375,7 +424,7 @@ function fieldHtml(k) {
 function vForm() {
   const seg = (name, list, val) => `<div class="seg">${list.map(k => `<button type="button" data-act="seg" data-name="${name}" data-v="${k}" class="${val === k ? 'sel' : ''}">${esc(t(k))}</button>`).join('')}</div>`;
   return `<button class="back" data-act="card">${esc(t('backNoSave'))}</button>
-  <form id="evalForm" class="card"><h2 class="code">${esc(form.code)}</h2>
+  <form id="evalForm" class="card"><h2 class="code">${esc(form.code)}</h2>${form.editId ? `<div class="muted" style="text-align:center">${esc(t('editing'))}</div>` : ''}
     <label>${esc(t('stage'))}</label>${seg('stage', STAGES, form.stage)}
     <label>${esc(t('when'))}</label>${seg('kind', KINDS, form.kind)}
     <label for="fDate">${esc(t(form.kind === 'harvest' ? 'dHarvest' : 'dStorage'))}</label><input id="fDate" type="date" value="${form.date}" max="${dstr(new Date())}">
@@ -386,6 +435,7 @@ function vForm() {
     </div>
     <input id="fCam" type="file" accept="image/*,video/*" capture="environment" hidden>
     <input id="fFiles" type="file" accept="image/*,video/*" multiple hidden>
+    ${form.editId ? `<div class="thumbs">${history(form.code).photos.filter(p => p.evalId === form.editId).map(p => `<span class="t${isVideo(p) ? ' vid' : ''}"><img src="data:image/jpeg;base64,${p.thumb || BLANK}" alt=""></span>`).join('')}</div>` : ''}
     <div id="fThumbs" class="thumbs"></div>
     ${LAYOUT[form.stage + '/' + form.kind].map(fieldHtml).join('')}
     <label>${esc(t('decision'))}</label><div class="chips">${DECISIONS[form.stage].map(k => `<button type="button" data-act="decide" data-v="${k}" class="${form.decision === k ? 'sel' : ''}">${esc(t('d_' + k))}</button>`).join('')}</div>
@@ -427,6 +477,12 @@ const actions = {
     if (last && last.plot) form.vals.plot = last.plot;
     view = 'form'; render(); window.scrollTo(0, 0);
   },
+  edit(el) {     // the stored evaluation opens in the same form; saving rewrites it and adds any new photos to it
+    const e = history(cur).evals.find(x => x.id === el.dataset.id); if (!e) return;
+    const vals = {}; Object.keys(FIELDS).forEach(k => { if (e[k] != null && e[k] !== '') vals[k] = String(e[k]); });
+    form = { code: e.code || cur, stage: STAGES.includes(e.stage) ? e.stage : 'mother', kind: KINDS.includes(e.kind) ? e.kind : 'harvest', date: e.date || dstr(new Date()), vals, decision: e.decision || '', photos: [], editId: e.id, orig: e };
+    view = 'form'; render(); window.scrollTo(0, 0);
+  },
   seg(el) { readForm(); form[el.dataset.name] = el.dataset.v; if (el.dataset.name === 'stage') form.decision = ''; render(); },
   pick(el) { readForm(); const k = el.dataset.f; form.vals[k] = form.vals[k] === el.dataset.v ? '' : el.dataset.v; $$(`[data-act=pick][data-f="${k}"]`).forEach(b => b.classList.toggle('sel', b.dataset.v === form.vals[k])); },
   decide(el) { form.decision = form.decision === el.dataset.v ? '' : el.dataset.v; $$('[data-act=decide]').forEach(b => b.classList.toggle('sel', b.dataset.v === form.decision)); },
@@ -439,7 +495,7 @@ const actions = {
       let src = '';
       if (el.dataset.local) { const b = await mget(el.dataset.id); if (b) src = URL.createObjectURL(b); }
       else {
-        const j = await api('bphoto', { id: el.dataset.id });
+        const j = await api('bphoto', { id: el.dataset.id, team: myTeam() });
         if (j.ok) src = video ? URL.createObjectURL(await (await fetch(`data:${j.mime};base64,${j.data}`)).blob()) : `data:${j.mime};base64,${j.data}`;
       }
       if (src && !v.hidden) v.innerHTML = video ? `<video src="${src}" controls autoplay playsinline></video>` : `<img src="${src}" alt="">`;
@@ -454,7 +510,7 @@ document.addEventListener('click', e => {
 document.addEventListener('input', e => { if (e.target.id === 'code') drawRecent(); });
 document.addEventListener('change', async e => {
   if (e.target.id === 'langSel') { readForm(); lang = e.target.value; localStorage.setItem('br_lang', lang); render(); return; }
-  if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); loadCodes(); return; }
+  if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); thumbsLoad(myTeam()); loadCodes(); return; }
   if (!['fFiles', 'fCam'].includes(e.target.id)) return;
   for (const f of [...e.target.files]) {
     if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
@@ -510,12 +566,22 @@ document.addEventListener('submit', async e => {
     if (f.t === 'num') { const n = parseFloat(v); if (isNaN(n) || n < f.min || n > f.max) return toast(`${t('f_' + k)}: ${t('badValue')} (${f.min}-${f.max})`); vals[k] = n; }
     else vals[k] = v;
   }
-  if (!Object.keys(vals).length && !form.photos.length) return toast(t('nothing'));
-  const id = uid(), team = myTeam();
-  const rec = { id, team, code: form.code, stage: form.stage, kind: form.kind, date: form.date, season: form.date.slice(0, 4), decision: form.decision, evaluator: B.me.name, ...vals };
+  if (!form.editId && !Object.keys(vals).length && !form.photos.length) return toast(t('nothing'));
+  const id = form.editId || uid(), team = myTeam();
+  let rec = { id, team, code: form.code, stage: form.stage, kind: form.kind, date: form.date, season: form.date.slice(0, 4), decision: form.decision, evaluator: B.me.name, ...vals };
+  let n0 = 0;
+  if (form.editId) {
+    // a correction: fields of this form that were emptied are cleared, anything the form does not show stays as it was
+    const { local, edit, ...orig } = form.orig, cleared = {}; keys.forEach(k => { cleared[k] = ''; });
+    const queued = B.evals.find(x => x.id === id);          // not sent yet: the waiting record itself is replaced
+    rec = { ...orig, ...cleared, ...rec, evaluator: orig.evaluator || B.me.name };
+    if (!queued || queued.edit) rec.edit = true;
+    B.evals = B.evals.filter(x => x.id !== id);
+    n0 = history(form.code).photos.filter(p => p.evalId === id).length;
+  }
   for (const p of form.photos) await mput(p.id, p.blob);
   B.evals.push(rec);
-  form.photos.forEach((p, i) => B.photos.push({ id: p.id, evalId: id, team, code: form.code, name: `${form.code}_${form.date}_${form.stage}_${form.kind}_${i + 1}.${p.ext || 'jpg'}`, thumb: p.thumb }));
+  form.photos.forEach((p, i) => B.photos.push({ id: p.id, evalId: id, team, code: form.code, name: `${form.code}_${form.date}_${form.stage}_${form.kind}_${n0 + i + 1}.${p.ext || 'jpg'}`, thumb: p.thumb }));
   if (!B.codes.some(c => c.team === team && ckey(c.code) === ckey(form.code))) B.codes.unshift({ team, code: form.code, last: form.date, stage: form.stage, n: 1, decision: form.decision });
   persist(); form = null; view = 'card'; render(); window.scrollTo(0, 0);
   toast(t(navigator.onLine ? 'saved' : 'savedOffline'));
@@ -526,4 +592,4 @@ setInterval(sync, 60000);
 if ('serviceWorker' in navigator && !MOCK) navigator.serviceWorker.register('sw.js').catch(() => {});
 
 render();
-if (B.token) { loadCodes(); sync(); }
+if (B.token) { thumbsLoad(myTeam()); loadCodes(); sync(); }
