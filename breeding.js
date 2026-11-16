@@ -26,7 +26,7 @@ const L = {
     noMatch: "Geen bestaande seleksie pas nie. \"Maak oop\" skep 'n nuwe kode.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
     back: "Terug", backNoSave: "Terug sonder om te stoor", newEval: "+ Nuwe evaluasie", history: "Geskiedenis",
     stage: "Stadium", mother: "Moederboom", graft: "Ge\u00ebnt", when: "Tyd van evaluasie", harvest: "By oes", storage: "Na koelopberging",
-    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", addPhoto: "\ud83d\udcf7 Neem of kies foto's",
+    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Neem foto", addPhoto: "Kies uit galery",
     decision: "Besluit (opsioneel)", d_keep: "Hou dop", d_graft: "Ent", d_advance: "Bevorder", d_discard: "Verwerp", save: "Stoor",
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
@@ -49,7 +49,7 @@ const L = {
     back: 'חזרה', backNoSave: 'חזרה בלי לשמור', newEval: '+ הערכה חדשה', history: 'היסטוריה',
     noneFor: 'אין עדיין הערכות לקוד הזה. אם הקוד קיים בכתיב אחר, בדוק ברשימה במסך הראשי.',
     stage: 'שלב', mother: 'עץ אם', graft: 'מורכב', when: 'מועד ההערכה', harvest: 'בקטיף', storage: 'אחרי קירור',
-    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', addPhoto: '📷 צלם או בחר תמונות',
+    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', takePhoto: '📷 צלם תמונה', addPhoto: 'בחר מהגלריה',
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
@@ -71,7 +71,7 @@ const L = {
     back: 'Back', backNoSave: 'Back without saving', newEval: '+ New evaluation', history: 'History',
     noneFor: 'No evaluations for this code yet. If the code exists in another spelling, check the list on the main screen.',
     stage: 'Stage', mother: 'Mother tree', graft: 'Grafted', when: 'Evaluation time', harvest: 'At harvest', storage: 'After cold storage',
-    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', addPhoto: '📷 Take or choose photos',
+    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', takePhoto: '📷 Take photo', addPhoto: 'Choose from gallery',
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
@@ -346,7 +346,11 @@ function vForm() {
     <label>${esc(t('when'))}</label>${seg('kind', KINDS, form.kind)}
     <label for="fDate">${esc(t(form.kind === 'harvest' ? 'dHarvest' : 'dStorage'))}</label><input id="fDate" type="date" value="${form.date}" max="${dstr(new Date())}">
     <label>${esc(t('photos'))}</label>
-    <button type="button" class="btn sec" data-act="addPhoto" style="margin-top:0">${esc(t('addPhoto'))}</button>
+    <div style="display:flex;gap:8px">
+      <button type="button" class="btn sec" data-act="takePhoto" style="margin-top:0;flex:1">${esc(t('takePhoto'))}</button>
+      <button type="button" class="btn sec" data-act="addPhoto" style="margin-top:0;flex:1">${esc(t('addPhoto'))}</button>
+    </div>
+    <input id="fCam" type="file" accept="image/*" capture="environment" hidden>
     <input id="fFiles" type="file" accept="image/*" multiple hidden>
     <div id="fThumbs" class="thumbs"></div>
     ${LAYOUT[form.stage + '/' + form.kind].map(fieldHtml).join('')}
@@ -392,6 +396,7 @@ const actions = {
   seg(el) { readForm(); form[el.dataset.name] = el.dataset.v; if (el.dataset.name === 'stage') form.decision = ''; render(); },
   pick(el) { readForm(); const k = el.dataset.f; form.vals[k] = form.vals[k] === el.dataset.v ? '' : el.dataset.v; $$(`[data-act=pick][data-f="${k}"]`).forEach(b => b.classList.toggle('sel', b.dataset.v === form.vals[k])); },
   decide(el) { form.decision = form.decision === el.dataset.v ? '' : el.dataset.v; $$('[data-act=decide]').forEach(b => b.classList.toggle('sel', b.dataset.v === form.decision)); },
+  takePhoto() { $('#fCam').click(); },      // opens the camera directly; a picker that allows several files only shows the gallery on Android
   addPhoto() { $('#fFiles').click(); },
   rmPhoto(el) { form.photos = form.photos.filter(p => p.id !== el.dataset.id); drawPhotos(); },
   async zoom(el) {
@@ -416,11 +421,14 @@ document.addEventListener('input', e => { if (e.target.id === 'code') drawRecent
 document.addEventListener('change', async e => {
   if (e.target.id === 'langSel') { readForm(); lang = e.target.value; localStorage.setItem('br_lang', lang); render(); return; }
   if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); loadCodes(); return; }
-  if (e.target.id !== 'fFiles') return;
+  if (e.target.id !== 'fFiles' && e.target.id !== 'fCam') return;
   for (const f of [...e.target.files]) {
     try {
-      const blob = await scaled(f, 2400, 0.9), small = await scaled(f, 320, 0.72);   // full photo close to the camera's own quality; a preview sharp enough for a phone screen
-      form.photos.push({ id: uid(), blob, thumb: await toB64(small) });
+      const blob = await scaled(f, 2400, 0.9);   // full photo close to the camera's own quality
+      let thumb = '';                            // a preview sharp enough for a phone screen; it lives in a sheet cell, which holds 50,000 characters
+      for (const q of [0.72, 0.6, 0.48, 0.36]) { thumb = await toB64(await scaled(f, 320, q)); if (thumb.length < 45000) break; }
+      if (thumb.length >= 45000) thumb = await toB64(await scaled(f, 240, 0.4));
+      form.photos.push({ id: uid(), blob, thumb });
     } catch (err) { toast(t('badPhoto')); }
   }
   e.target.value = ''; drawPhotos();
