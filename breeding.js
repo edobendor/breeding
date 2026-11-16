@@ -26,12 +26,12 @@ const L = {
     noMatch: "Geen bestaande seleksie pas nie. \"Maak oop\" skep 'n nuwe kode.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
     back: "Terug", backNoSave: "Terug sonder om te stoor", newEval: "+ Nuwe evaluasie", history: "Geskiedenis",
     stage: "Stadium", mother: "Moederboom", graft: "Ge\u00ebnt", when: "Tyd van evaluasie", harvest: "By oes", storage: "Na koelopberging",
-    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Neem foto", addPhoto: "Kies uit galery",
+    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Foto", addPhoto: "Galery",
     decision: "Besluit (opsioneel)", d_keep: "Hou dop", d_graft: "Ent", d_advance: "Bevorder", d_discard: "Verwerp", save: "Stoor",
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
     installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
-    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", takeVideo: "🎥 Video", bigVideo: "Die video is te lank, hou dit onder 15 sekondes", rawPhoto: "Foto bygevoeg sonder voorskou",
     f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
     f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
     h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
@@ -49,11 +49,11 @@ const L = {
     back: 'חזרה', backNoSave: 'חזרה בלי לשמור', newEval: '+ הערכה חדשה', history: 'היסטוריה',
     noneFor: 'אין עדיין הערכות לקוד הזה. אם הקוד קיים בכתיב אחר, בדוק ברשימה במסך הראשי.',
     stage: 'שלב', mother: 'עץ אם', graft: 'מורכב', when: 'מועד ההערכה', harvest: 'בקטיף', storage: 'אחרי קירור',
-    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', takePhoto: '📷 צלם תמונה', addPhoto: 'בחר מהגלריה',
+    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', takePhoto: '📷 תמונה', addPhoto: 'גלריה',
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
-    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה',
+    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', takeVideo: '🎥 וידאו', bigVideo: 'הסרטון ארוך מדי, עד 15 שניות', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה',
     f_plot: 'מיקום', ph_plot: 'אתר / חלקה / שורה', f_size: 'גודל פרי (מ"מ)', f_sizeClass: 'מיון גודל', ph_sizeClass: 'למשל A/AA/B', f_brix: 'בריקס', f_firm: 'מוצקות (ק"ג)',
     f_yield: 'צפי יבול', h_yield: '1 = נמוך · 3 = בינוני · 5 = גבוה מאוד', f_taste: 'טעם',
     h_taste: 'כיול: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'תיאור טעם ומרקם', ph_tasteNote: 'למשל: פריך, ארומטי, חמצמץ ליד הקליפה',
@@ -71,11 +71,11 @@ const L = {
     back: 'Back', backNoSave: 'Back without saving', newEval: '+ New evaluation', history: 'History',
     noneFor: 'No evaluations for this code yet. If the code exists in another spelling, check the list on the main screen.',
     stage: 'Stage', mother: 'Mother tree', graft: 'Grafted', when: 'Evaluation time', harvest: 'At harvest', storage: 'After cold storage',
-    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', takePhoto: '📷 Take photo', addPhoto: 'Choose from gallery',
+    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', takePhoto: '📷 Photo', addPhoto: 'Gallery',
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
-    badValue: 'value out of range', badPhoto: 'The photo could not be read',
+    badValue: 'value out of range', badPhoto: 'The photo could not be read', takeVideo: '🎥 Video', bigVideo: 'The video is too long, keep it under 15 seconds', rawPhoto: 'Photo added without a preview',
     f_plot: 'Location', ph_plot: 'Site / block / row', f_size: 'Fruit size (mm)', f_sizeClass: 'Size classes', ph_sizeClass: 'e.g. A/AA/B', f_brix: 'Brix', f_firm: 'Pressure (kg)',
     f_yield: 'Yield expectation', h_yield: '1 = low · 3 = medium · 5 = very high', f_taste: 'Taste',
     h_taste: 'Calibration: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'Taste and texture', ph_tasteNote: 'e.g. crunchy, aromatic, acidic under the skin',
@@ -170,8 +170,41 @@ const mget = id => mtx('readonly', s => s.get(id));
 const mdel = id => mtx('readwrite', s => s.delete(id));
 const toB64 = blob => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = () => rej(r.error); r.readAsDataURL(blob); });
 // A phone photo is 4-10 MB. It is reduced to about 1600 px for the archive, plus a tiny preview kept in the sheet.
+// Some phones hand over a format the fast decoder refuses (HEIC, a very large picture): the plain image element is tried next.
+async function bitmap(file) {
+  try { return await createImageBitmap(file); }
+  catch (e) {
+    return new Promise((res, rej) => {
+      const url = URL.createObjectURL(file), i = new Image();
+      i.onload = () => { URL.revokeObjectURL(url); i.naturalWidth ? res(i) : rej(new Error('decode')); };
+      i.onerror = () => { URL.revokeObjectURL(url); rej(new Error('decode')); };
+      i.src = url;
+    });
+  }
+}
+function videoThumb(blob) {
+  return new Promise(res => {
+    const v = document.createElement('video'), url = URL.createObjectURL(blob);
+    const end = out => { clearTimeout(tm); URL.revokeObjectURL(url); res(out); };
+    const tm = setTimeout(() => end(null), 9000);
+    v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = url;
+    v.onloadeddata = () => { v.currentTime = Math.min(0.6, (v.duration || 1) / 2); };
+    v.onseeked = () => {
+      try {
+        const k = 320 / Math.max(v.videoWidth, v.videoHeight), c = document.createElement('canvas');
+        c.width = Math.round(v.videoWidth * k); c.height = Math.round(v.videoHeight * k);
+        c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+        c.toBlob(b => end(b), 'image/jpeg', 0.7);
+      } catch (e) { end(null); }
+    };
+    v.onerror = () => end(null);
+  });
+}
+const MAX_VIDEO = 25e6, MAX_RAW = 15e6;   // one request to the server carries at most about 50 MB, and the file grows by a third on the way
+const fileExt = (f, d) => (/\.([a-z0-9]{2,4})$/i.exec(f.name || '') || [0, (f.type || '').split('/')[1] || d])[1].toLowerCase().replace('quicktime', 'mov');
+const sizeTxt = f => `${f.type || fileExt(f, '?')}, ${(f.size / 1e6).toFixed(1)} MB`;
 async function scaled(file, max, q) {
-  const img = await createImageBitmap(file);
+  const img = file instanceof Blob ? await bitmap(file) : file;   // a picture already decoded is used as it is
   const k = Math.min(1, max / Math.max(img.width, img.height));
   const c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
   c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
@@ -297,7 +330,7 @@ function history(code) {
   const key = e => e.date + (e.kind === 'storage' ? '1' : '0');
   return { evals: evals.sort((a, b) => key(b).localeCompare(key(a))), photos };
 }
-const isVideo = p => /\.(mp4|mov|webm)$/i.test(p.name || '');
+const isVideo = p => /\.(mp4|mov|webm|m4v|3gp)$/i.test(p.name || '');
 const BLANK = 'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';   // 1 px, when a video has no preview frame
 function nums(e) {
   const out = [], has = k => e[k] != null && e[k] !== '';
@@ -349,10 +382,12 @@ function vForm() {
     <label>${esc(t('photos'))}</label>
     <div style="display:flex;gap:8px">
       <button type="button" class="btn sec" data-act="takePhoto" style="margin-top:0;flex:1">${esc(t('takePhoto'))}</button>
+      <button type="button" class="btn sec" data-act="takeVideo" style="margin-top:0;flex:1">${esc(t('takeVideo'))}</button>
       <button type="button" class="btn sec" data-act="addPhoto" style="margin-top:0;flex:1">${esc(t('addPhoto'))}</button>
     </div>
     <input id="fCam" type="file" accept="image/*" capture="environment" hidden>
-    <input id="fFiles" type="file" accept="image/*" multiple hidden>
+    <input id="fVid" type="file" accept="video/*" capture="environment" hidden>
+    <input id="fFiles" type="file" accept="image/*,video/*" multiple hidden>
     <div id="fThumbs" class="thumbs"></div>
     ${LAYOUT[form.stage + '/' + form.kind].map(fieldHtml).join('')}
     <label>${esc(t('decision'))}</label><div class="chips">${DECISIONS[form.stage].map(k => `<button type="button" data-act="decide" data-v="${k}" class="${form.decision === k ? 'sel' : ''}">${esc(t('d_' + k))}</button>`).join('')}</div>
@@ -360,7 +395,7 @@ function vForm() {
 }
 function drawPhotos() {
   const el = $('#fThumbs'); if (!el) return;
-  el.innerHTML = form.photos.map(p => `<div class="t"><img src="data:image/jpeg;base64,${p.thumb}" alt=""><button type="button" class="x" data-act="rmPhoto" data-id="${p.id}">✕</button></div>`).join('');
+  el.innerHTML = form.photos.map(p => `<div class="t${/^(mp4|mov|webm|m4v|3gp)$/.test(p.ext) ? ' vid' : ''}"><img src="data:image/jpeg;base64,${p.thumb || BLANK}" alt=""><button type="button" class="x" data-act="rmPhoto" data-id="${p.id}">✕</button></div>`).join('');
 }
 function readForm() {
   if (!form || !$('#evalForm')) return;
@@ -398,6 +433,7 @@ const actions = {
   pick(el) { readForm(); const k = el.dataset.f; form.vals[k] = form.vals[k] === el.dataset.v ? '' : el.dataset.v; $$(`[data-act=pick][data-f="${k}"]`).forEach(b => b.classList.toggle('sel', b.dataset.v === form.vals[k])); },
   decide(el) { form.decision = form.decision === el.dataset.v ? '' : el.dataset.v; $$('[data-act=decide]').forEach(b => b.classList.toggle('sel', b.dataset.v === form.decision)); },
   takePhoto() { $('#fCam').click(); },      // opens the camera directly; a picker that allows several files only shows the gallery on Android
+  takeVideo() { $('#fVid').click(); },
   addPhoto() { $('#fFiles').click(); },
   rmPhoto(el) { form.photos = form.photos.filter(p => p.id !== el.dataset.id); drawPhotos(); },
   async zoom(el) {
@@ -422,15 +458,29 @@ document.addEventListener('input', e => { if (e.target.id === 'code') drawRecent
 document.addEventListener('change', async e => {
   if (e.target.id === 'langSel') { readForm(); lang = e.target.value; localStorage.setItem('br_lang', lang); render(); return; }
   if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); loadCodes(); return; }
-  if (e.target.id !== 'fFiles' && e.target.id !== 'fCam') return;
+  if (!['fFiles', 'fCam', 'fVid'].includes(e.target.id)) return;
   for (const f of [...e.target.files]) {
+    if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
+    if (/^video\//.test(f.type) || /\.(mp4|mov|webm|m4v|3gp)$/i.test(f.name || '')) {
+      if (f.size > MAX_VIDEO) { toast(`${t('bigVideo')} (${(f.size / 1e6).toFixed(0)} MB)`); continue; }
+      const tb = await videoThumb(f);
+      form.photos.push({ id: uid(), blob: f, thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
+      drawPhotos(); continue;
+    }
     try {
-      const blob = await scaled(f, 2400, 0.9);   // full photo close to the camera's own quality
-      let thumb = '';                            // a preview sharp enough for a phone screen; it lives in a sheet cell, which holds 50,000 characters
-      for (const q of [0.72, 0.6, 0.48, 0.36]) { thumb = await toB64(await scaled(f, 320, q)); if (thumb.length < 45000) break; }
-      if (thumb.length >= 45000) thumb = await toB64(await scaled(f, 240, 0.4));
-      form.photos.push({ id: uid(), blob, thumb });
-    } catch (err) { toast(t('badPhoto')); }
+      const img = await bitmap(f);
+      const blob = await scaled(img, 2400, 0.9);   // full photo close to the camera's own quality
+      let thumb = '';                              // a preview sharp enough for a phone screen; it lives in a sheet cell, which holds 50,000 characters
+      for (const q of [0.72, 0.6, 0.48, 0.36]) { thumb = await toB64(await scaled(img, 320, q)); if (thumb.length < 45000) break; }
+      if (thumb.length >= 45000) thumb = await toB64(await scaled(img, 240, 0.4));
+      if (!blob) throw new Error('canvas');
+      form.photos.push({ id: uid(), blob, thumb, ext: 'jpg' });
+    } catch (err) {
+      // the phone cannot open this picture format: the file is kept as it is, without a preview, rather than lost
+      if (f.size <= MAX_RAW) { form.photos.push({ id: uid(), blob: f, thumb: '', ext: fileExt(f, 'jpg') }); toast(`${t('rawPhoto')} (${sizeTxt(f)})`); }
+      else toast(`${t('badPhoto')} (${sizeTxt(f)})`);
+    }
+    drawPhotos();
   }
   e.target.value = ''; drawPhotos();
 });
@@ -468,7 +518,7 @@ document.addEventListener('submit', async e => {
   const rec = { id, team, code: form.code, stage: form.stage, kind: form.kind, date: form.date, season: form.date.slice(0, 4), decision: form.decision, evaluator: B.me.name, ...vals };
   for (const p of form.photos) await mput(p.id, p.blob);
   B.evals.push(rec);
-  form.photos.forEach((p, i) => B.photos.push({ id: p.id, evalId: id, team, code: form.code, name: `${form.code}_${form.date}_${form.stage}_${form.kind}_${i + 1}.jpg`, thumb: p.thumb }));
+  form.photos.forEach((p, i) => B.photos.push({ id: p.id, evalId: id, team, code: form.code, name: `${form.code}_${form.date}_${form.stage}_${form.kind}_${i + 1}.${p.ext || 'jpg'}`, thumb: p.thumb }));
   if (!B.codes.some(c => c.team === team && ckey(c.code) === ckey(form.code))) B.codes.unshift({ team, code: form.code, last: form.date, stage: form.stage, n: 1, decision: form.decision });
   persist(); form = null; view = 'card'; render(); window.scrollTo(0, 0);
   toast(t(navigator.onLine ? 'saved' : 'savedOffline'));
