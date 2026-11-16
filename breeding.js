@@ -88,13 +88,14 @@ const L = {
   }
 };
 let lang = localStorage.getItem('br_lang') || '';
-const t = k => (L[lang || 'he'][k]) ?? L.en[k] ?? L.he[k] ?? k;
+const curLang = () => lang || (cultirex() ? 'af' : 'he');   // no language chosen yet: Afrikaans on a Cultirex phone, Hebrew otherwise
+const t = k => (L[curLang()][k]) ?? L.en[k] ?? L.he[k] ?? k;
 // Cultirex users get their own sign-in screen (a Cape photo) and Afrikaans in the language list.
 // Before sign-in the team is not known yet, so the device remembers the last team that signed in.
 const cultirex = () => B.token ? myTeam() === 'Cultirex' : (localStorage.getItem('br_lastteam') || (/^he/i.test(navigator.language || '') ? '' : 'Cultirex')) === 'Cultirex';
 
 // The header carries the team's own name: Cultirex users see Cultirex, not Ben Dor.
-const teamName = () => { const x = myTeam(); return x === 'Ben Dor' && (lang || 'he') === 'he' ? 'בן דור' : x; };
+const teamName = () => { const x = myTeam(); return x === 'Ben Dor' && curLang() === 'he' ? 'בן דור' : x; };
 const title = () => (B.token && teamName() ? teamName() + ' - ' : '') + t('title');
 
 function toast(msg) {
@@ -247,12 +248,12 @@ function renderTop() {
   const n = waiting();
   $('#top').innerHTML = `<div class="title">${esc(title())}</div><div class="right">
     ${B.token ? `<button data-act="sync">${busy ? '⟳' : n ? '⏳ ' + n : '✓'}</button>` : ''}
-    <select id="langSel" aria-label="language"><option value="he"${(lang || 'he') === 'he' ? ' selected' : ''}>עברית</option><option value="en"${lang === 'en' ? ' selected' : ''}>English</option>${cultirex() || lang === 'af' ? `<option value="af"${lang === 'af' ? ' selected' : ''}>Afrikaans</option>` : ''}</select>
+    <select id="langSel" aria-label="language"><option value="he"${curLang() === 'he' ? ' selected' : ''}>עברית</option><option value="en"${curLang() === 'en' ? ' selected' : ''}>English</option>${cultirex() || curLang() === 'af' ? `<option value="af"${curLang() === 'af' ? ' selected' : ''}>Afrikaans</option>` : ''}</select>
     ${B.token ? `<button data-act="logout">${esc(t('logout'))}</button>` : ''}</div>`;
 }
 function render() {
-  document.documentElement.lang = lang || 'he';
-  document.documentElement.dir = (lang || 'he') === 'he' ? 'rtl' : 'ltr';
+  document.documentElement.lang = curLang();
+  document.documentElement.dir = curLang() === 'he' ? 'rtl' : 'ltr';
   document.body.classList.toggle('cape', !B.token && cultirex());
   document.title = title();
   renderTop();
@@ -332,10 +333,10 @@ function fieldHtml(k) {
   const f = FIELDS[k], v = form.vals[k] ?? '';
   let inner;
   if (f.t === 'num') inner = `<input data-f="${k}" type="number" inputmode="decimal" step="${f.step}" value="${esc(v)}">`;
-  else if (f.t === 'text') inner = `<input data-f="${k}" value="${esc(v)}" placeholder="${esc(L[lang || 'he']['ph_' + k] || '')}" maxlength="300">`;
+  else if (f.t === 'text') inner = `<input data-f="${k}" value="${esc(v)}" placeholder="${esc(L[curLang()]['ph_' + k] || '')}" maxlength="300">`;
   else if (f.t === 'scale') inner = `<div class="scale n${f.n}">${Array.from({ length: f.n }, (_, i) => `<button type="button" data-act="pick" data-f="${k}" data-v="${i + 1}" class="${String(v) === String(i + 1) ? 'sel' : ''}">${i + 1}</button>`).join('')}</div>`;
   else inner = `<div class="chips">${f.opts.map(o => `<button type="button" data-act="pick" data-f="${k}" data-v="${o}" class="${v === o ? 'sel' : ''}">${esc(t(f.pre + o))}</button>`).join('')}</div>`;
-  const hint = L[lang || 'he']['h_' + k];
+  const hint = L[curLang()]['h_' + k];
   return `<label>${esc(t('f_' + k))}</label>${inner}${hint ? `<div class="hint">${esc(hint)}</div>` : ''}`;
 }
 function vForm() {
@@ -444,7 +445,7 @@ document.addEventListener('submit', async e => {
         localStorage.setItem('br_lastuser', user);
         B.token = j.token; B.me = j.me; B.team = j.me.team; B.codes = []; B.cache = {};
         localStorage.setItem('br_lastteam', j.me.team);
-        if (!lang) { lang = j.me.team === 'Ben Dor' ? 'he' : 'en'; localStorage.setItem('br_lang', lang); }   // first sign-in: partners outside Israel start in English
+        if (!lang) { lang = j.me.team === 'Ben Dor' ? 'he' : j.me.team === 'Cultirex' ? 'af' : 'en'; localStorage.setItem('br_lang', lang); }   // first sign-in: Cultirex starts in Afrikaans, other partners in English
         persist(); view = 'home'; render(); loadCodes(); sync(); return;
       }
       toast(t(j.error === 'locked' ? 'locked' : 'badLogin'));
