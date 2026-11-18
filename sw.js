@@ -1,5 +1,5 @@
 // Network first, cache fallback: the app keeps opening in the orchard without reception.
-const CACHE = 'breeding-v13';
+const CACHE = 'breeding-v14';
 const FILES = ['./', 'index.html', 'styles.css', 'config.js', 'breeding.js', 'icon-192.png', 'icon-512.png', 'cape.jpg', 'manifest.webmanifest'];
 
 self.addEventListener('install', e => {
