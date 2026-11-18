@@ -31,7 +31,7 @@ const L = {
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
     installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
-    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot. Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie", lostFile: "Een foto of video het verlore gegaan op die foon, voeg dit asseblief weer by", noStore: "Die foon kon die foto of video nie stoor nie. Niks is gestoor nie, probeer weer of verwyder die video",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot. Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie", badVideo: "Die video kon nie bygevoeg word nie", lostFile: "Een foto of video het verlore gegaan op die foon, voeg dit asseblief weer by", noStore: "Die foon kon die foto of video nie stoor nie. Niks is gestoor nie, probeer weer of verwyder die video",
     f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
     f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
     h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
@@ -53,7 +53,7 @@ const L = {
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
-    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי. צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה', lostFile: 'תמונה או סרטון אבדו בטלפון, נא להוסיף שוב', noStore: 'הטלפון לא הצליח לשמור את התמונה או הסרטון. דבר לא נשמר, נסו שוב או הסירו את הסרטון',
+    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי. צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה', badVideo: 'לא ניתן להוסיף את הסרטון', lostFile: 'תמונה או סרטון אבדו בטלפון, נא להוסיף שוב', noStore: 'הטלפון לא הצליח לשמור את התמונה או הסרטון. דבר לא נשמר, נסו שוב או הסירו את הסרטון',
     f_plot: 'מיקום', ph_plot: 'אתר / חלקה / שורה', f_size: 'גודל פרי (מ"מ)', f_sizeClass: 'מיון גודל', ph_sizeClass: 'למשל A/AA/B', f_brix: 'בריקס', f_firm: 'מוצקות (ק"ג)',
     f_yield: 'צפי יבול', h_yield: '1 = נמוך · 3 = בינוני · 5 = גבוה מאוד', f_taste: 'טעם',
     h_taste: 'כיול: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'תיאור טעם ומרקם', ph_tasteNote: 'למשל: פריך, ארומטי, חמצמץ ליד הקליפה',
@@ -75,7 +75,7 @@ const L = {
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
-    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large. Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation', lostFile: 'A photo or video was lost on the phone, please add it again', noStore: 'The phone could not store the photo or video. Nothing was saved, try again or remove the video',
+    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large. Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation', badVideo: 'The video could not be added', lostFile: 'A photo or video was lost on the phone, please add it again', noStore: 'The phone could not store the photo or video. Nothing was saved, try again or remove the video',
     f_plot: 'Location', ph_plot: 'Site / block / row', f_size: 'Fruit size (mm)', f_sizeClass: 'Size classes', ph_sizeClass: 'e.g. A/AA/B', f_brix: 'Brix', f_firm: 'Pressure (kg)',
     f_yield: 'Yield expectation', h_yield: '1 = low · 3 = medium · 5 = very high', f_taste: 'Taste',
     h_taste: 'Calibration: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'Taste and texture', ph_tasteNote: 'e.g. crunchy, aromatic, acidic under the skin',
@@ -100,7 +100,7 @@ const title = () => (B.token && teamName() ? teamName() + ' - ' : '') + t('title
 
 function toast(msg) {
   const el = $('#toast'); el.textContent = msg; el.classList.add('show');
-  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 3000);
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), Math.min(9000, Math.max(3000, String(msg).length * 70)));   // a long message stays long enough to read
 }
 
 // ---------- what is asked at each stage ----------
@@ -176,9 +176,11 @@ async function mtx(mode, fn) {
 // A file picked from the gallery or the camera is only a pointer to the phone's own file, which the app may lose.
 // It is read into the app's memory first, in pieces, so that what is stored is the content itself.
 async function ownCopy(f) {
-  const parts = [];
-  for (let from = 0; from < f.size; from += 8388608) parts.push(await f.slice(from, from + 8388608).arrayBuffer());
-  return new Blob(parts, { type: f.type || 'application/octet-stream' });
+  try {
+    const parts = [];
+    for (let from = 0; from < f.size; from += 8388608) parts.push(await f.slice(from, from + 8388608).arrayBuffer());
+    return new Blob(parts, { type: f.type || 'application/octet-stream' });
+  } catch (e) { return f; }     // the phone refuses to hand over the content now: the file itself is tried, and saving checks that it was really stored
 }
 const mput = (id, blob) => mtx('readwrite', s => s.put(blob, id));
 const mget = id => mtx('readonly', s => s.get(id));
@@ -215,7 +217,7 @@ function videoThumb(blob) {
     v.onerror = () => end(null);
   });
 }
-const BIG_VIDEOS = false;   // true only once the Google script that accepts videos in pieces is deployed
+const BIG_VIDEOS = true;   // true only once the Google script that accepts videos in pieces is deployed
 const MAX_VIDEO = BIG_VIDEOS ? 200 * 1024 * 1024 : 25e6, MAX_RAW = 15e6, ONE_GO = BIG_VIDEOS ? 20e6 : Infinity;   // one request to the server carries about 50 MB; a larger file travels in pieces
 const fileExt = (f, d) => (/\.([a-z0-9]{2,4})$/i.exec(f.name || '') || [0, (f.type || '').split('/')[1] || d])[1].toLowerCase().replace('quicktime', 'mov');
 const sizeTxt = f => `${f.type || fileExt(f, '?')}, ${(f.size / 1e6).toFixed(1)} MB`;
@@ -563,8 +565,10 @@ document.addEventListener('change', async e => {
     if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
     if (/^video\//.test(f.type) || /\.(mp4|mov|webm|m4v|3gp)$/i.test(f.name || '')) {
       if (f.size > MAX_VIDEO) { toast(`${t('bigVideo')} (${(f.size / 1e6).toFixed(0)} MB, max ${Math.round(MAX_VIDEO / 1e6)} MB)`); continue; }
-      const tb = await videoThumb(f);
-      form.photos.push({ id: uid(), blob: await ownCopy(f), thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
+      try {
+        const tb = await videoThumb(f);
+        form.photos.push({ id: uid(), blob: await ownCopy(f), thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
+      } catch (err) { toast(`${t('badVideo')} (${sizeTxt(f)}; ${String(err && err.message || err).slice(0, 60)})`); }
       drawPhotos(); continue;
     }
     try {
