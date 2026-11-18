@@ -31,7 +31,7 @@ const L = {
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
     installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
-    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot (limiet 25 MB). Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot. Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie", lostFile: "Een foto of video het verlore gegaan op die foon, voeg dit asseblief weer by", noStore: "Die foon kon die foto of video nie stoor nie. Niks is gestoor nie, probeer weer of verwyder die video",
     f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
     f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
     h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
@@ -53,7 +53,7 @@ const L = {
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
-    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי (עד 25MB). צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה',
+    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי. צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה', lostFile: 'תמונה או סרטון אבדו בטלפון, נא להוסיף שוב', noStore: 'הטלפון לא הצליח לשמור את התמונה או הסרטון. דבר לא נשמר, נסו שוב או הסירו את הסרטון',
     f_plot: 'מיקום', ph_plot: 'אתר / חלקה / שורה', f_size: 'גודל פרי (מ"מ)', f_sizeClass: 'מיון גודל', ph_sizeClass: 'למשל A/AA/B', f_brix: 'בריקס', f_firm: 'מוצקות (ק"ג)',
     f_yield: 'צפי יבול', h_yield: '1 = נמוך · 3 = בינוני · 5 = גבוה מאוד', f_taste: 'טעם',
     h_taste: 'כיול: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'תיאור טעם ומרקם', ph_tasteNote: 'למשל: פריך, ארומטי, חמצמץ ליד הקליפה',
@@ -75,7 +75,7 @@ const L = {
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
-    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large (limit 25 MB). Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation',
+    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large. Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation', lostFile: 'A photo or video was lost on the phone, please add it again', noStore: 'The phone could not store the photo or video. Nothing was saved, try again or remove the video',
     f_plot: 'Location', ph_plot: 'Site / block / row', f_size: 'Fruit size (mm)', f_sizeClass: 'Size classes', ph_sizeClass: 'e.g. A/AA/B', f_brix: 'Brix', f_firm: 'Pressure (kg)',
     f_yield: 'Yield expectation', h_yield: '1 = low · 3 = medium · 5 = very high', f_taste: 'Taste',
     h_taste: 'Calibration: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'Taste and texture', ph_tasteNote: 'e.g. crunchy, aromatic, acidic under the skin',
@@ -164,7 +164,22 @@ function idb() {
     r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
   });
 }
-async function mtx(mode, fn) { const db = await idb(); return new Promise((res, rej) => { const q = fn(db.transaction('m', mode).objectStore('m')); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); }
+// A write counts only when the whole transaction is finished: a phone can accept the request and then fail to write the file itself.
+async function mtx(mode, fn) {
+  const db = await idb();
+  return new Promise((res, rej) => {
+    const tx = db.transaction('m', mode), q = fn(tx.objectStore('m'));
+    tx.oncomplete = () => res(q.result); tx.onabort = tx.onerror = () => rej(tx.error || q.error || new Error('storage'));
+    q.onerror = () => rej(q.error);
+  });
+}
+// A file picked from the gallery or the camera is only a pointer to the phone's own file, which the app may lose.
+// It is read into the app's memory first, in pieces, so that what is stored is the content itself.
+async function ownCopy(f) {
+  const parts = [];
+  for (let from = 0; from < f.size; from += 8388608) parts.push(await f.slice(from, from + 8388608).arrayBuffer());
+  return new Blob(parts, { type: f.type || 'application/octet-stream' });
+}
 const mput = (id, blob) => mtx('readwrite', s => s.put(blob, id));
 const mget = id => mtx('readonly', s => s.get(id));
 const mdel = id => mtx('readwrite', s => s.delete(id));
@@ -200,7 +215,8 @@ function videoThumb(blob) {
     v.onerror = () => end(null);
   });
 }
-const MAX_VIDEO = 25e6, MAX_RAW = 15e6;   // one request to the server carries at most about 50 MB, and the file grows by a third on the way
+const BIG_VIDEOS = false;   // true only once the Google script that accepts videos in pieces is deployed
+const MAX_VIDEO = BIG_VIDEOS ? 200 * 1024 * 1024 : 25e6, MAX_RAW = 15e6, ONE_GO = BIG_VIDEOS ? 20e6 : Infinity;   // one request to the server carries about 50 MB; a larger file travels in pieces
 const fileExt = (f, d) => (/\.([a-z0-9]{2,4})$/i.exec(f.name || '') || [0, (f.type || '').split('/')[1] || d])[1].toLowerCase().replace('quicktime', 'mov');
 const sizeTxt = f => `${f.type || fileExt(f, '?')}, ${(f.size / 1e6).toFixed(1)} MB`;
 async function scaled(file, max, q) {
@@ -242,6 +258,25 @@ async function syncThumbs(team) {
   thBusy = false;
 }
 
+// A large video goes up in pieces; the server says how large a piece is. If the connection drops, the video starts again next time.
+let upPct = null;
+async function upBig(p, blob) {
+  try {
+    const s = await api('bupstart', { photo: { ...p, mime: blob.type || 'video/mp4', size: blob.size } });
+    if (!s.ok) return false;
+    if (s.done) return true;
+    const n = s.chunk || 8388608;
+    for (let from = 0; from < blob.size;) {
+      upPct = Math.round(from / blob.size * 100); renderTop();
+      const j = await api('bupchunk', { id: p.id, from, data: await toB64(blob.slice(from, from + n)) });
+      if (!j.ok || (!j.done && !(j.next > from))) return false;
+      if (j.done) return true;
+      from = j.next;
+    }
+    return false;
+  } finally { upPct = null; }
+}
+
 // ---------- server ----------
 async function api(action, payload = {}) {
   const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ action, btoken: B.token, ...payload }) });
@@ -272,9 +307,11 @@ async function sync() {
     }
     for (const p of B.photos.slice()) {          // one photo per request keeps each upload small
       const blob = await mget(p.id);
-      if (!blob) { B.photos = B.photos.filter(x => x.id !== p.id); persist(); continue; }
-      const j = await api('bsave', { photos: [{ ...p, mime: blob.type, data: await toB64(blob) }] });
-      if (!j.ok) break;
+      if (!blob || !blob.size) { B.photos = B.photos.filter(x => x.id !== p.id); persist(); toast(`${t('lostFile')} (${p.code})`); continue; }
+      let sent;
+      if (blob.size > ONE_GO) sent = await upBig(p, blob);
+      else { const j = await api('bsave', { photos: [{ ...p, mime: blob.type, data: await toB64(blob) }] }); sent = j.ok && (j.done || []).includes(p.id); }   // the server lists what it really stored
+      if (!sent) break;
       keep(p.team, p.code, 'photos', p); B.photos = B.photos.filter(x => x.id !== p.id); persist(); await mdel(p.id); renderTop();
     }
   } catch (e) { /* no reception: everything stays on the phone and is sent later */ }
@@ -321,7 +358,7 @@ function installCard() {
 function renderTop() {
   const n = waiting();
   $('#top').innerHTML = `<div class="title">${esc(title())}</div><div class="right">
-    ${B.token ? `<button data-act="sync">${busy ? '⟳' : n ? '⏳ ' + n : '✓'}</button>` : ''}
+    ${B.token ? `<button data-act="sync">${busy ? '⟳' + (upPct != null ? ' ' + upPct + '%' : '') : n ? '⏳ ' + n : '✓'}</button>` : ''}
     <select id="langSel" aria-label="language"><option value="he"${curLang() === 'he' ? ' selected' : ''}>עברית</option><option value="en"${curLang() === 'en' ? ' selected' : ''}>English</option>${cultirex() || curLang() === 'af' ? `<option value="af"${curLang() === 'af' ? ' selected' : ''}>Afrikaans</option>` : ''}</select>
     ${B.token ? `<button data-act="logout">${esc(t('logout'))}</button>` : ''}</div>`;
 }
@@ -496,7 +533,17 @@ const actions = {
       if (el.dataset.local) { const b = await mget(el.dataset.id); if (b) src = URL.createObjectURL(b); }
       else {
         const j = await api('bphoto', { id: el.dataset.id, team: myTeam() });
-        if (j.ok) src = video ? URL.createObjectURL(await (await fetch(`data:${j.mime};base64,${j.data}`)).blob()) : `data:${j.mime};base64,${j.data}`;
+        if (j.ok && j.big) {                    // a large video comes down in pieces
+          const parts = [];
+          for (let from = 0; from < j.size;) {
+            if (v.hidden) return;
+            const w = v.querySelector('.wait'); if (w) w.textContent = Math.round(from / j.size * 100) + '%';
+            const q = await api('bpart', { id: el.dataset.id, team: myTeam(), from });
+            if (!q.ok || !(q.next > from)) { parts.length = 0; break; }
+            parts.push(await (await fetch('data:application/octet-stream;base64,' + q.data)).blob()); from = q.next;
+          }
+          if (parts.length) src = URL.createObjectURL(new Blob(parts, { type: j.mime }));
+        } else if (j.ok) src = video ? URL.createObjectURL(await (await fetch(`data:${j.mime};base64,${j.data}`)).blob()) : `data:${j.mime};base64,${j.data}`;
       }
       if (src && !v.hidden) v.innerHTML = video ? `<video src="${src}" controls autoplay playsinline></video>` : `<img src="${src}" alt="">`;
     } catch (e) { /* offline: the small preview stays */ }
@@ -515,9 +562,9 @@ document.addEventListener('change', async e => {
   for (const f of [...e.target.files]) {
     if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
     if (/^video\//.test(f.type) || /\.(mp4|mov|webm|m4v|3gp)$/i.test(f.name || '')) {
-      if (f.size > MAX_VIDEO) { toast(`${t('bigVideo')} (${(f.size / 1e6).toFixed(0)} MB)`); continue; }
+      if (f.size > MAX_VIDEO) { toast(`${t('bigVideo')} (${(f.size / 1e6).toFixed(0)} MB, max ${Math.round(MAX_VIDEO / 1e6)} MB)`); continue; }
       const tb = await videoThumb(f);
-      form.photos.push({ id: uid(), blob: f, thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
+      form.photos.push({ id: uid(), blob: await ownCopy(f), thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
       drawPhotos(); continue;
     }
     try {
@@ -530,7 +577,7 @@ document.addEventListener('change', async e => {
       form.photos.push({ id: uid(), blob, thumb, ext: 'jpg' });
     } catch (err) {
       // the phone cannot open this picture format: the file is kept as it is, without a preview, rather than lost
-      if (f.size <= MAX_RAW) { form.photos.push({ id: uid(), blob: f, thumb: '', ext: fileExt(f, 'jpg') }); toast(`${t('rawPhoto')} (${sizeTxt(f)})`); }
+      if (f.size <= MAX_RAW) { form.photos.push({ id: uid(), blob: await ownCopy(f), thumb: '', ext: fileExt(f, 'jpg') }); toast(`${t('rawPhoto')} (${sizeTxt(f)})`); }
       else toast(`${t('badPhoto')} (${sizeTxt(f)})`);
     }
     drawPhotos();
@@ -569,6 +616,12 @@ document.addEventListener('submit', async e => {
   if (!form.editId && !Object.keys(vals).length && !form.photos.length) return toast(t('nothing'));
   const id = form.editId || uid(), team = myTeam();
   let rec = { id, team, code: form.code, stage: form.stage, kind: form.kind, date: form.date, season: form.date.slice(0, 4), decision: form.decision, evaluator: B.me.name, ...vals };
+  try {       // every file is stored on the phone and read back before the evaluation is accepted
+    for (const p of form.photos) { await mput(p.id, p.blob); const back = await mget(p.id); if (!back || back.size !== p.blob.size) throw new Error('storage'); }
+  } catch (err) {
+    for (const p of form.photos) { try { await mdel(p.id); } catch (e2) { /* nothing was stored */ } }
+    return toast(t('noStore'));
+  }
   let n0 = 0;
   if (form.editId) {
     // a correction: fields of this form that were emptied are cleared, anything the form does not show stays as it was
@@ -579,7 +632,6 @@ document.addEventListener('submit', async e => {
     B.evals = B.evals.filter(x => x.id !== id);
     n0 = history(form.code).photos.filter(p => p.evalId === id).length;
   }
-  for (const p of form.photos) await mput(p.id, p.blob);
   B.evals.push(rec);
   form.photos.forEach((p, i) => B.photos.push({ id: p.id, evalId: id, team, code: form.code, name: `${form.code}_${form.date}_${form.stage}_${form.kind}_${n0 + i + 1}.${p.ext || 'jpg'}`, thumb: p.thumb }));
   if (!B.codes.some(c => c.team === team && ckey(c.code) === ckey(form.code))) B.codes.unshift({ team, code: form.code, last: form.date, stage: form.stage, n: 1, decision: form.decision });
