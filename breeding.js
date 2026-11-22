@@ -26,7 +26,7 @@ const L = {
     noMatch: "Geen bestaande seleksie pas nie.", none: "Nog geen evaluasies nie", evals: "evaluasies", typeCode: "Tik 'n seleksiekode",
     back: "Terug", backNoSave: "Terug sonder om te stoor", newEval: "+ Nuwe evaluasie", history: "Geskiedenis",
     stage: "Stadium", mother: "Moederboom", graft: "Ge\u00ebnt", when: "Tyd van evaluasie", harvest: "By oes", storage: "Na koelopberging",
-    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Kamera", addPhoto: "Galery",
+    dHarvest: "Oesdatum", dStorage: "Datum uit koelopberging", photos: "Foto's", takePhoto: "\ud83d\udcf7 Foto", takeVideo: "\ud83c\udfa5 Video", addPhoto: "Galery",
     decision: "Besluit (opsioneel)", d_keep: "Hou dop", d_graft: "Ent", d_advance: "Bevorder", d_discard: "Verwerp", save: "Stoor",
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
@@ -49,7 +49,7 @@ const L = {
     back: 'חזרה', backNoSave: 'חזרה בלי לשמור', newEval: '+ הערכה חדשה', history: 'היסטוריה',
     noneFor: 'אין עדיין הערכות לקוד הזה. אם הקוד קיים בכתיב אחר, בדוק ברשימה במסך הראשי.',
     stage: 'שלב', mother: 'עץ אם', graft: 'מורכב', when: 'מועד ההערכה', harvest: 'בקטיף', storage: 'אחרי קירור',
-    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', takePhoto: '📷 מצלמה', addPhoto: 'גלריה',
+    dHarvest: 'תאריך קטיף', dStorage: 'תאריך הוצאה מקירור', photos: 'תמונות', takePhoto: '📷 צילום', takeVideo: '🎥 וידאו', addPhoto: 'גלריה',
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
@@ -71,7 +71,7 @@ const L = {
     back: 'Back', backNoSave: 'Back without saving', newEval: '+ New evaluation', history: 'History',
     noneFor: 'No evaluations for this code yet. If the code exists in another spelling, check the list on the main screen.',
     stage: 'Stage', mother: 'Mother tree', graft: 'Grafted', when: 'Evaluation time', harvest: 'At harvest', storage: 'After cold storage',
-    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', takePhoto: '📷 Camera', addPhoto: 'Gallery',
+    dHarvest: 'Harvest date', dStorage: 'Date out of cold storage', photos: 'Photos', takePhoto: '📷 Photo', takeVideo: '🎥 Video', addPhoto: 'Gallery',
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
@@ -547,10 +547,12 @@ function vForm() {
     <label for="fDate">${esc(t(form.kind === 'harvest' ? 'dHarvest' : 'dStorage'))}</label><input id="fDate" type="date" value="${form.date}" max="${dstr(new Date())}">
     <label>${esc(t('photos'))}</label>
     <div style="display:flex;gap:8px">
-      <button type="button" class="btn sec" data-act="takePhoto" style="margin-top:0;flex:1">${esc(t('takePhoto'))}</button>
-      <button type="button" class="btn sec" data-act="addPhoto" style="margin-top:0;flex:1">${esc(t('addPhoto'))}</button>
+      <button type="button" class="btn sec" data-act="takePhoto" style="margin-top:0;flex:1;padding-inline:4px">${esc(t('takePhoto'))}</button>
+      <button type="button" class="btn sec" data-act="takeVideo" style="margin-top:0;flex:1;padding-inline:4px">${esc(t('takeVideo'))}</button>
+      <button type="button" class="btn sec" data-act="addPhoto" style="margin-top:0;flex:1;padding-inline:4px">${esc(t('addPhoto'))}</button>
     </div>
-    <input id="fCam" type="file" accept="image/*,video/*" capture="environment" hidden>
+    <input id="fCam" type="file" accept="image/*" capture="environment" hidden>
+    <input id="fVid" type="file" accept="video/*" capture="environment" hidden>
     <input id="fFiles" type="file" accept="image/*,video/*" multiple hidden>
     ${form.editId ? `<div class="thumbs">${history(form.code).photos.filter(p => p.evalId === form.editId).map(p => `<span class="t${isVideo(p) ? ' vid' : ''}"><img src="data:image/jpeg;base64,${p.thumb || BLANK}" alt=""></span>`).join('')}</div>` : ''}
     <input id="fAny" type="file" multiple hidden>
@@ -606,7 +608,10 @@ const actions = {
   seg(el) { readForm(); form[el.dataset.name] = el.dataset.v; if (el.dataset.name === 'stage') form.decision = ''; render(); },
   pick(el) { readForm(); const k = el.dataset.f; form.vals[k] = form.vals[k] === el.dataset.v ? '' : el.dataset.v; $$(`[data-act=pick][data-f="${k}"]`).forEach(b => b.classList.toggle('sel', b.dataset.v === form.vals[k])); },
   decide(el) { form.decision = form.decision === el.dataset.v ? '' : el.dataset.v; $$('[data-act=decide]').forEach(b => b.classList.toggle('sel', b.dataset.v === form.decision)); },
-  takePhoto() { $('#fCam').click(); },      // one camera button for a photo or a video; a picker that allows several files only shows the gallery on Android
+  // Android opens the camera itself only when the button asks for one kind of file. A button that asks for "photo or video"
+  // gets the phone's gallery picker, with no camera in it. So: one button for a photo, one for a video, one for the gallery.
+  takePhoto() { $('#fCam').click(); },
+  takeVideo() { $('#fVid').click(); },
   addPhoto() { $('#fFiles').click(); },
   anyFile() { $('#fAny').click(); },     // the phone's Files app instead of its photo picker: it hands over the file as it is
   rmPhoto(el) { form.photos = form.photos.filter(p => p.id !== el.dataset.id); drawPhotos(); },
@@ -642,7 +647,7 @@ document.addEventListener('input', e => { if (e.target.id === 'code') drawRecent
 document.addEventListener('change', async e => {
   if (e.target.id === 'langSel') { readForm(); lang = e.target.value; localStorage.setItem('br_lang', lang); render(); return; }
   if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); thumbsLoad(myTeam()); loadCodes(); return; }
-  if (!['fFiles', 'fCam', 'fAny'].includes(e.target.id)) return;
+  if (!['fFiles', 'fCam', 'fVid', 'fAny'].includes(e.target.id)) return;
   for (const f of [...e.target.files]) {
     if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
     if (/^video\//.test(f.type) || /\.(mp4|mov|webm|m4v|3gp)$/i.test(f.name || '')) {
