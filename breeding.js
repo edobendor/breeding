@@ -228,7 +228,7 @@ function videoThumb(blob) {
   });
 }
 const BIG_VIDEOS = true;   // true only once the Google script that accepts videos in pieces is deployed
-const MAX_VIDEO = BIG_VIDEOS ? 200 * 1024 * 1024 : 25e6, MAX_RAW = 15e6, ONE_GO = BIG_VIDEOS ? 20e6 : Infinity;   // one request to the server carries about 50 MB; a larger file travels in pieces
+const MAX_VIDEO = BIG_VIDEOS ? 200 * 1024 * 1024 : 25e6, MAX_RAW = 15e6, ONE_GO = BIG_VIDEOS ? 4e6 : Infinity;   // one request to the server carries about 50 MB; a larger file travels in pieces
 const fileExt = (f, d) => (/\.([a-z0-9]{2,4})$/i.exec(f.name || '') || [0, (f.type || '').split('/')[1] || d])[1].toLowerCase().replace('quicktime', 'mov');
 const sizeTxt = f => `${f.type || fileExt(f, '?')}, ${(f.size / 1e6).toFixed(1)} MB`;
 async function scaled(file, max, q) {
@@ -270,29 +270,47 @@ async function syncThumbs(team) {
   thBusy = false;
 }
 
-// A large video goes up in pieces; the server says how large a piece is. If the connection drops, the video starts again next time.
+// A video goes up in small pieces (2 MB), so the percent moves and a slow line is enough. The place reached is kept on the phone:
+// if the line drops or the app is closed, the video continues from that place next time (the server keeps an upload open for six hours).
+// The screen is kept awake while a video is going, because a phone that falls asleep stops the upload.
 let upPct = null;
+const PIECE = 2097152;
 async function upBig(p, blob) {
+  let awake = null;
+  try { awake = await navigator.wakeLock.request('screen'); } catch (e) { /* not on every phone */ }
   try {
-    const s = await api('bupstart', { photo: { ...p, mime: blob.type || 'video/mp4', size: blob.size } });
-    if (!s.ok) { sendErr = 'start: ' + (s.error || '') + ' ' + (s.detail || ''); return false; }
-    if (s.done) return true;
-    const n = s.chunk || 8388608;
-    for (let from = 0; from < blob.size;) {
-      upPct = Math.round(from / blob.size * 100); renderTop();
-      const j = await api('bupchunk', { id: p.id, from, data: await toB64(blob.slice(from, from + n)) });
-      if (!j.ok || (!j.done && !(j.next > from))) { sendErr = 'piece at ' + Math.round(from / 1e6) + ' MB: ' + (j.error || 'no progress') + ' ' + (j.detail || ''); return false; }
-      if (j.done) return true;
-      from = j.next;
+    for (let round = 0; round < 2; round++) {
+      const resumed = !!p.up;
+      if (!resumed) {
+        const s = await api('bupstart', { photo: { ...p, mime: blob.type || 'video/mp4', size: blob.size } }, 60000);
+        if (!s.ok) { sendErr = 'start: ' + (s.error || '') + ' ' + (s.detail || ''); return false; }
+        if (s.done) return true;
+        p.up = 1; p.at = 0; persist();
+      }
+      let from = p.at || 0, fail = '';
+      while (from < blob.size) {
+        upPct = Math.round(from / blob.size * 100); renderTop();
+        const j = await api('bupchunk', { id: p.id, from, data: await toB64(blob.slice(from, from + PIECE)) }, 240000);
+        if (j.ok && j.done) return true;
+        if (!j.ok || !(j.next > from)) { fail = 'piece at ' + Math.round(from / 1e6) + ' MB: ' + (j.error || 'no progress') + ' ' + (j.detail || ''); break; }
+        from = p.at = j.next; persist();
+      }
+      delete p.up; delete p.at; persist();          // the server refused: the next try begins this video again
+      if (resumed) continue;                        // a continued upload that the server no longer knows: begin again at once
+      sendErr = fail || 'not finished'; return false;
     }
     return false;
-  } finally { upPct = null; }
+  } finally { upPct = null; try { if (awake) awake.release(); } catch (e) { /* already released */ } }
 }
 
 // ---------- server ----------
-async function api(action, payload = {}) {
-  const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ action, btoken: B.token, ...payload }) });
-  const j = await r.json();
+async function api(action, payload = {}, ms = 0) {      // ms: give up after this long, so a stuck request shows as an error instead of hanging
+  const ac = ms ? new AbortController() : null, timer = ac ? setTimeout(() => ac.abort(), ms) : 0;
+  let j;
+  try {
+    const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ action, btoken: B.token, ...payload }), signal: ac ? ac.signal : undefined });
+    j = await r.json();
+  } finally { clearTimeout(timer); }
   if (j.error === 'auth' && action !== 'blogin') { B.token = null; B.me = null; persist(); render(); throw new Error('auth'); }
   return j;
 }
