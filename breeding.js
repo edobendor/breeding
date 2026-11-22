@@ -270,11 +270,22 @@ async function syncThumbs(team) {
   thBusy = false;
 }
 
-// A video goes up in small pieces (2 MB), so the percent moves and a slow line is enough. The place reached is kept on the phone:
-// if the line drops or the app is closed, the video continues from that place next time (the server keeps an upload open for six hours).
+// A video goes from the phone straight to Google Drive, in pieces of 8 MB: the server only opens the upload and, at the end,
+// writes the video in the list. That is as fast as the line allows. If the phone cannot reach Drive directly, the same upload
+// continues through the server in pieces of 2 MB (slower). The place reached is kept on the phone, so after a break in the
+// line, or after the app was closed, the video continues from that place (an upload stays open for six hours).
 // The screen is kept awake while a video is going, because a phone that falls asleep stops the upload.
 let upPct = null;
-const PIECE = 2097152;
+const PIECE = 2097152, DIRECT = 8388608;
+async function putDirect(uri, blob, from, to) {       // one piece to Drive; true = Drive has the whole file
+  const ac = new AbortController(), timer = setTimeout(() => ac.abort(), 300000);
+  try {
+    const r = await fetch(uri, { method: 'PUT', headers: { 'Content-Range': `bytes ${from}-${to}/${blob.size}` }, body: blob.slice(from, to + 1), signal: ac.signal });
+    if (r.status === 200 || r.status === 201) return true;
+    if (r.status !== 308) throw new Error('drive ' + r.status);
+    return false;
+  } finally { clearTimeout(timer); }
+}
 async function upBig(p, blob) {
   let awake = null;
   try { awake = await navigator.wakeLock.request('screen'); } catch (e) { /* not on every phone */ }
@@ -282,21 +293,40 @@ async function upBig(p, blob) {
     for (let round = 0; round < 2; round++) {
       const resumed = !!p.up;
       if (!resumed) {
-        const s = await api('bupstart', { photo: { ...p, mime: blob.type || 'video/mp4', size: blob.size } }, 60000);
+        const s = await api('bupstart', { photo: { ...p, uri: undefined, mime: blob.type || 'video/mp4', size: blob.size }, origin: location.origin }, 60000);
         if (!s.ok) { sendErr = 'start: ' + (s.error || '') + ' ' + (s.detail || ''); return false; }
         if (s.done) return true;
-        p.up = 1; p.at = 0; persist();
+        p.up = 1; p.at = 0; if (s.uri) p.uri = s.uri; else delete p.uri; persist();
       }
-      let from = p.at || 0, fail = '';
+      let from = p.at || 0, fail = '', misses = 0;
+      const state = async () => {                 // the server asks Drive how far the video has come
+        const j = await api('bupstat', { id: p.id }, 60000);
+        if (j.ok && j.done) return true;
+        if (!j.ok) { fail = 'state: ' + (j.error || '') + ' ' + (j.detail || ''); return null; }
+        if (j.next > from) misses = 0;            // the piece did arrive, only the answer was lost
+        from = p.at = j.next; persist(); return false;
+      };
+      if (resumed && p.uri) { const st = await state(); if (st) return true; if (st === null) from = blob.size + 1; }
       while (from < blob.size) {
         upPct = Math.round(from / blob.size * 100); renderTop();
+        if (p.uri) {
+          const to = Math.min(from + DIRECT, blob.size) - 1;
+          let all = false, ok = false;
+          try { all = await putDirect(p.uri, blob, from, to); ok = true; } catch (e) { if (!navigator.onLine) throw e; misses++; }
+          if (ok && !all) { from = p.at = to + 1; persist(); misses = 0; continue; }
+          const st = await state();               // the last piece, or a piece whose answer did not come back
+          if (st) return true;
+          if (st === null) break;
+          if (misses >= 2) { delete p.uri; persist(); }     // Drive cannot be reached directly from this phone: the rest goes through the server
+          continue;
+        }
         const j = await api('bupchunk', { id: p.id, from, data: await toB64(blob.slice(from, from + PIECE)) }, 240000);
         if (j.ok && j.done) return true;
         if (!j.ok || !(j.next > from)) { fail = 'piece at ' + Math.round(from / 1e6) + ' MB: ' + (j.error || 'no progress') + ' ' + (j.detail || ''); break; }
         from = p.at = j.next; persist();
       }
-      delete p.up; delete p.at; persist();          // the server refused: the next try begins this video again
-      if (resumed) continue;                        // a continued upload that the server no longer knows: begin again at once
+      delete p.up; delete p.at; delete p.uri; persist();   // the server refused: the next try begins this video again
+      if (resumed) continue;                               // a continued upload that the server no longer knows: begin again at once
       sendErr = fail || 'not finished'; return false;
     }
     return false;
@@ -360,7 +390,7 @@ async function sync() {
       if (blob.size > ONE_GO) sent = await upBig(p, blob);
       else { const j = await api('bsave', { photos: [{ ...p, mime: blob.type, data: await toB64(blob) }] }); sent = j.ok && (j.done || []).includes(p.id); if (!sent) sendErr = (j.error || 'not stored') + ' ' + (j.detail || ''); }   // the server lists what it really stored
       if (!sent) break;
-      sendErr = '';
+      sendErr = ''; delete p.up; delete p.at; delete p.uri;
       keep(p.team, p.code, 'photos', p); B.photos = B.photos.filter(x => x.id !== p.id); persist(); delete MEM[p.id]; await mdel(p.id); renderTop();
     }
   } catch (e) { sendErr = navigator.onLine ? ((e && e.name) || 'Error') + ': ' + String((e && e.message) || e).slice(0, 80) : ''; /* no reception: everything stays on the phone and is sent later */ }
