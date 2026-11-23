@@ -31,7 +31,7 @@ const L = {
     saved: "Gestoor", savedOffline: "Op die foon gestoor, word gestuur wanneer daar ontvangs is", nothing: "Niks om te stoor nie: voeg 'n foto of ten minste een waarde by",
     installTitle: "Installeer op hierdie foon", installBtn: "Installeer die toepassing", installIos: "Op iPhone: maak oop in Safari, tik die Deel-knoppie, dan \"Voeg by tuisskerm\".",
     installHint: "Om as toepassing te installeer: maak hierdie adres in Chrome self oop (nie binne WhatsApp of 'n ander toepassing nie).",
-    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot. Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie", badVideo: "Die video kon nie bygevoeg word nie", fromFiles: "Video laai nie? Kies dit uit Lêers", memOnly: "Gestoor. Die foon wou 'n lêer nie hou nie, hou die toepassing oop totdat dit gestuur is", notSent: "nog nie gestuur nie, die toepassing probeer elke minuut weer", waitWifi: "video's wag vir Wi-Fi", sendNow: "Stuur nou", sendingVid: "video's word gestuur, hou die toepassing oop", waitNet: "video's wag vir ontvangs", lostFile: "Een foto of video het verlore gegaan op die foon, voeg dit asseblief weer by", noStore: "Die foon kon die foto of video nie stoor nie. Niks is gestoor nie, probeer weer of verwyder die video",
+    badValue: "waarde buite perke", badPhoto: "Die foto kon nie gelees word nie", bigVideo: "Die videolêer is te groot. Neem korter of in laer kwaliteit op", rawPhoto: "Foto bygevoeg sonder voorskou", edit: "Wysig", editing: "Wysig evaluasie", badVideo: "Die video kon nie bygevoeg word nie", fromFiles: "Laai nie? Kies dit uit Lêers", memOnly: "Gestoor. Die foon wou 'n lêer nie hou nie, hou die toepassing oop totdat dit gestuur is", notSent: "nog nie gestuur nie, die toepassing probeer elke minuut weer", waitWifi: "video's wag vir Wi-Fi", sendNow: "Stuur nou", sendingVid: "video's word gestuur, hou die toepassing oop", waitNet: "video's wag vir ontvangs", lostFile: "Een foto of video het verlore gegaan op die foon, voeg dit asseblief weer by", noStore: "Die foon kon die foto of video nie stoor nie. Niks is gestoor nie, probeer weer of verwyder die video",
     f_plot: "Ligging", ph_plot: "Perseel / blok / ry", f_size: "Vruggrootte (mm)", f_sizeClass: "Grootteklasse", ph_sizeClass: "bv. A/AA/B", f_brix: "Brix", f_firm: "Druk (kg)",
     f_yield: "Verwagte opbrengs", h_yield: "1 = laag \u00b7 3 = medium \u00b7 5 = baie hoog", f_taste: "Smaak",
     h_taste: "Kalibrasie: 4 = African Rose \u00b7 6 = Laetitia \u00b7 8 = Ruby Sun \u00b7 10 = Flavor King", f_tasteNote: "Smaak en tekstuur", ph_tasteNote: "bv. krakerig, aromaties, suur onder die skil",
@@ -53,7 +53,7 @@ const L = {
     decision: 'החלטה (לא חובה)', d_keep: 'להמשיך לעקוב', d_graft: 'להרכיב', d_advance: 'לקדם', d_discard: 'לפסול', save: 'שמור',
     saved: 'נשמר', savedOffline: 'נשמר בטלפון, יישלח כשתהיה קליטה', nothing: 'אין מה לשמור: הוסף תמונה או נתון אחד לפחות',
     installTitle: 'התקנה בטלפון', installBtn: 'התקנת האפליקציה', installIos: 'באייפון: לפתוח ב-Safari, ללחוץ על כפתור השיתוף ואז "הוסף למסך הבית".', installHint: 'כדי להתקין כאפליקציה: לפתוח את הכתובת הזאת בדפדפן Chrome עצמו (לא מתוך וואטסאפ ולא מתוך אפליקציית דיווח שטח).',
-    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי. צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה', badVideo: 'לא ניתן להוסיף את הסרטון', fromFiles: 'הסרטון לא נטען? בחרו אותו מהקבצים', memOnly: 'נשמר. הטלפון לא שמר קובץ, השאירו את האפליקציה פתוחה עד שיישלח', notSent: 'עדיין לא נשלח, האפליקציה מנסה שוב כל דקה', waitWifi: 'סרטונים ממתינים ל-Wi-Fi', sendNow: 'שלח עכשיו', sendingVid: 'סרטונים נשלחים, השאירו את האפליקציה פתוחה', waitNet: 'סרטונים ממתינים לקליטה', lostFile: 'תמונה או סרטון אבדו בטלפון, נא להוסיף שוב', noStore: 'הטלפון לא הצליח לשמור את התמונה או הסרטון. דבר לא נשמר, נסו שוב או הסירו את הסרטון',
+    badValue: 'ערך לא סביר', badPhoto: 'לא ניתן לקרוא את התמונה', bigVideo: 'קובץ הסרטון גדול מדי. צלם קצר יותר או באיכות נמוכה יותר', rawPhoto: 'התמונה נוספה ללא תצוגה מקדימה', edit: 'עריכה', editing: 'עריכת הערכה', badVideo: 'לא ניתן להוסיף את הסרטון', fromFiles: 'לא נטען? בחרו מהקבצים', memOnly: 'נשמר. הטלפון לא שמר קובץ, השאירו את האפליקציה פתוחה עד שיישלח', notSent: 'עדיין לא נשלח, האפליקציה מנסה שוב כל דקה', waitWifi: 'סרטונים ממתינים ל-Wi-Fi', sendNow: 'שלח עכשיו', sendingVid: 'סרטונים נשלחים, השאירו את האפליקציה פתוחה', waitNet: 'סרטונים ממתינים לקליטה', lostFile: 'תמונה או סרטון אבדו בטלפון, נא להוסיף שוב', noStore: 'הטלפון לא הצליח לשמור את התמונה או הסרטון. דבר לא נשמר, נסו שוב או הסירו את הסרטון',
     f_plot: 'מיקום', ph_plot: 'אתר / חלקה / שורה', f_size: 'גודל פרי (מ"מ)', f_sizeClass: 'מיון גודל', ph_sizeClass: 'למשל A/AA/B', f_brix: 'בריקס', f_firm: 'מוצקות (ק"ג)',
     f_yield: 'צפי יבול', h_yield: '1 = נמוך · 3 = בינוני · 5 = גבוה מאוד', f_taste: 'טעם',
     h_taste: 'כיול: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'תיאור טעם ומרקם', ph_tasteNote: 'למשל: פריך, ארומטי, חמצמץ ליד הקליפה',
@@ -75,7 +75,7 @@ const L = {
     decision: 'Decision (optional)', d_keep: 'Keep following', d_graft: 'Graft', d_advance: 'Advance', d_discard: 'Discard', save: 'Save',
     saved: 'Saved', savedOffline: 'Saved on the phone, will be sent when there is reception', nothing: 'Nothing to save: add a photo or at least one value',
     installTitle: 'Install on this phone', installBtn: 'Install the app', installIos: 'On iPhone: open in Safari, tap the Share button, then "Add to Home Screen".', installHint: 'To install as an app: open this address in Chrome itself (not inside WhatsApp or another app).',
-    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large. Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation', badVideo: 'The video could not be added', fromFiles: 'Video does not load? Choose it from Files', memOnly: 'Saved. The phone would not keep a file, so keep the app open until it is sent', notSent: 'not sent yet, the app tries again every minute', waitWifi: 'videos waiting for Wi-Fi', sendNow: 'Send now', sendingVid: 'videos being sent, keep the app open', waitNet: 'videos waiting for reception', lostFile: 'A photo or video was lost on the phone, please add it again', noStore: 'The phone could not store the photo or video. Nothing was saved, try again or remove the video',
+    badValue: 'value out of range', badPhoto: 'The photo could not be read', bigVideo: 'The video file is too large. Record a shorter one or in lower quality', rawPhoto: 'Photo added without a preview', edit: 'Edit', editing: 'Edit evaluation', badVideo: 'The video could not be added', fromFiles: 'Does not load? Choose it from Files', memOnly: 'Saved. The phone would not keep a file, so keep the app open until it is sent', notSent: 'not sent yet, the app tries again every minute', waitWifi: 'videos waiting for Wi-Fi', sendNow: 'Send now', sendingVid: 'videos being sent, keep the app open', waitNet: 'videos waiting for reception', lostFile: 'A photo or video was lost on the phone, please add it again', noStore: 'The phone could not store the photo or video. Nothing was saved, try again or remove the video',
     f_plot: 'Location', ph_plot: 'Site / block / row', f_size: 'Fruit size (mm)', f_sizeClass: 'Size classes', ph_sizeClass: 'e.g. A/AA/B', f_brix: 'Brix', f_firm: 'Pressure (kg)',
     f_yield: 'Yield expectation', h_yield: '1 = low · 3 = medium · 5 = very high', f_taste: 'Taste',
     h_taste: 'Calibration: 4 = African Rose · 6 = Laetitia · 8 = Ruby Sun · 10 = Flavor King', f_tasteNote: 'Taste and texture', ph_tasteNote: 'e.g. crunchy, aromatic, acidic under the skin',
@@ -344,6 +344,43 @@ async function api(action, payload = {}, ms = 0) {      // ms: give up after thi
   if (j.error === 'auth' && action !== 'blogin') { B.token = null; B.me = null; persist(); render(); throw new Error('auth'); }
   return j;
 }
+// ---------- the phone's own notes ----------
+// What was pressed, what the phone handed over and what failed is noted and sent to the log tab of the main sheet,
+// so a fault on a phone in the field is read in the office instead of asked from the user. Nothing of it shows on the screen.
+const VER = '21';
+let PHONE = (() => {
+  const u = navigator.userAgent, a = /Android [^;)]+(; [^;)]+)?|iPhone OS [\d_]+|Windows NT [\d.]+|Mac OS X [\d_.]+/.exec(u);
+  let app = ''; try { app = matchMedia('(display-mode: standalone)').matches ? ' installed' : ' browser'; } catch (e) { /* not said */ }
+  return ((a && a[0]) || '?') + ' ' + (u.match(/(Chrome|CriOS|SamsungBrowser|Firefox|Version)\/[\d.]+/g) || []).join(' ') + app;
+})();
+try {      // the phone model, where the browser gives it
+  navigator.userAgentData.getHighEntropyValues(['model', 'platformVersion']).then(h => { if (h && h.model) PHONE = `${h.model} Android ${h.platformVersion || ''} | ${PHONE}`; }).catch(() => {});
+} catch (e) { /* older browser: the line above is all there is */ }
+let NOTES = (() => { try { return JSON.parse(localStorage.getItem('br_notes') || '[]'); } catch (e) { return []; } })();
+const two = n => String(n).padStart(2, '0');
+function note(what) {
+  try {
+    const d = new Date();
+    NOTES.push({ at: `${two(d.getDate())}.${two(d.getMonth() + 1)} ${two(d.getHours())}:${two(d.getMinutes())}:${two(d.getSeconds())}`, what: String(what).slice(0, 400) });
+    if (NOTES.length > 150) NOTES = NOTES.slice(-150);
+    localStorage.setItem('br_notes', JSON.stringify(NOTES));
+  } catch (e) { /* a note is never worth an error */ }
+  clearTimeout(note.t); note.t = setTimeout(sendNotes, 3000);
+}
+async function sendNotes() {
+  if (sendNotes.busy || !NOTES.length || !B.token || !navigator.onLine) return;
+  sendNotes.busy = true;
+  const batch = NOTES.slice(0, 80);
+  try {
+    const j = await api('blog', { ver: VER, phone: PHONE, lines: batch }, 30000);
+    if (j.ok || j.error === 'unknown') { NOTES = NOTES.slice(batch.length); localStorage.setItem('br_notes', JSON.stringify(NOTES)); }
+  } catch (e) { /* no reception: the notes wait */ }
+  sendNotes.busy = false;
+  if (NOTES.length && navigator.onLine) { clearTimeout(note.t); note.t = setTimeout(sendNotes, 20000); }
+}
+const fileTxt = f => `${f.type || '?'} ${(f.size / 1e6).toFixed(1)} MB`;
+window.addEventListener('error', e => note(`error: ${e.message} @${String(e.filename || '').split('/').pop()}:${e.lineno}`));
+window.addEventListener('unhandledrejection', e => note(`rejection: ${(e.reason && (e.reason.name + ' ' + e.reason.message)) || e.reason}`));
 const waiting = () => B.evals.length + B.photos.length;
 // Videos are heavy. On mobile data they wait on the phone and go by themselves once the phone is on Wi-Fi;
 // "Send now" sends them anyway. A phone that does not say what it is connected to (iPhone) sends at once.
@@ -390,11 +427,14 @@ async function sync() {
       if (blob.size > ONE_GO) sent = await upBig(p, blob);
       else { const j = await api('bsave', { photos: [{ ...p, mime: blob.type, data: await toB64(blob) }] }); sent = j.ok && (j.done || []).includes(p.id); if (!sent) sendErr = (j.error || 'not stored') + ' ' + (j.detail || ''); }   // the server lists what it really stored
       if (!sent) break;
+      note(`sent ${p.ext} ${(blob.size / 1e6).toFixed(1)} MB ${p.code}`);
       sendErr = ''; delete p.up; delete p.at; delete p.uri;
       keep(p.team, p.code, 'photos', p); B.photos = B.photos.filter(x => x.id !== p.id); persist(); delete MEM[p.id]; await mdel(p.id); renderTop();
     }
   } catch (e) { sendErr = navigator.onLine ? ((e && e.name) || 'Error') + ': ' + String((e && e.message) || e).slice(0, 80) : ''; /* no reception: everything stays on the phone and is sent later */ }
   busy = false; renderTop();
+  if (sendErr && sendErr !== sync.told) note('not sent: ' + sendErr);
+  sync.told = sendErr;
   if (view === 'card') { render(); loadCode(cur); }
   if (!(B.evals.length + sendQueue().length)) loadCodes();
 }
@@ -610,10 +650,10 @@ const actions = {
   decide(el) { form.decision = form.decision === el.dataset.v ? '' : el.dataset.v; $$('[data-act=decide]').forEach(b => b.classList.toggle('sel', b.dataset.v === form.decision)); },
   // Android opens the camera itself only when the button asks for one kind of file. A button that asks for "photo or video"
   // gets the phone's gallery picker, with no camera in it. So: one button for a photo, one for a video, one for the gallery.
-  takePhoto() { $('#fCam').click(); },
-  takeVideo() { $('#fVid').click(); },
-  addPhoto() { $('#fFiles').click(); },
-  anyFile() { $('#fAny').click(); },     // the phone's Files app instead of its photo picker: it hands over the file as it is
+  takePhoto() { note('press Photo'); $('#fCam').click(); },
+  takeVideo() { note('press Video'); $('#fVid').click(); },
+  addPhoto() { note('press Gallery'); $('#fFiles').click(); },
+  anyFile() { note('press Files'); $('#fAny').click(); },     // the phone's Files app instead of its photo picker: it hands over the file as it is
   rmPhoto(el) { form.photos = form.photos.filter(p => p.id !== el.dataset.id); drawPhotos(); },
   async zoom(el) {
     const v = $('#view'), video = !!el.dataset.video; v.hidden = false; v.innerHTML = `<img src="${el.src}" alt="">${video ? '<div class="wait">⟳</div>' : ''}`;
@@ -648,15 +688,19 @@ document.addEventListener('change', async e => {
   if (e.target.id === 'langSel') { readForm(); lang = e.target.value; localStorage.setItem('br_lang', lang); render(); return; }
   if (e.target.id === 'teamSel') { B.team = e.target.value; B.codes = []; persist(); render(); thumbsLoad(myTeam()); loadCodes(); return; }
   if (!['fFiles', 'fCam', 'fVid', 'fAny'].includes(e.target.id)) return;
-  for (const f of [...e.target.files]) {
-    if (!f.size) { toast(`${t('badPhoto')} (0 MB)`); continue; }
+  const picked = [...e.target.files], input = e.target, had = form ? form.photos.length : -1;
+  note(`${input.id}: ${picked.length} file(s) ${picked.map(fileTxt).join(', ')}${form ? '' : ' NO FORM'}`);
+  if (!form) return;
+  for (const f of picked) { try {      // one file that fails never stops the others, and never fails without a message
+    if (!f.size) { note('empty file'); toast(`${t('badPhoto')} (0 MB)`); continue; }
     if (/^video\//.test(f.type) || /\.(mp4|mov|webm|m4v|3gp)$/i.test(f.name || '')) {
       if (f.size > MAX_VIDEO) { toast(`${t('bigVideo')} (${(f.size / 1e6).toFixed(0)} MB, max ${Math.round(MAX_VIDEO / 1e6)} MB)`); continue; }
       try {
         const copy = await ownCopy(f);          // the content itself, read into the app; fails here if the phone does not hand it over
         const tb = await videoThumb(copy);
         form.photos.push({ id: uid(), blob: copy, thumb: tb ? await toB64(tb) : '', ext: /^(mp4|mov|webm|m4v|3gp)$/.test(fileExt(f, 'mp4')) ? fileExt(f, 'mp4') : 'mp4' });
-      } catch (err) { form.readFail = true; const l = $('#fAnyLink'); if (l) l.style.display = ''; toast(`${t('badVideo')} (${sizeTxt(f)}; ${String(err && err.message || err).slice(0, 60)}). ${t('fromFiles')}`); }
+        note(`video added, way ${ownCopy.way}, preview ${tb ? 'yes' : 'no'}`);
+      } catch (err) { note(`video refused: ${String(err && err.message || err)}`); form.readFail = true; const l = $('#fAnyLink'); if (l) l.style.display = ''; toast(`${t('badVideo')} (${sizeTxt(f)}; ${String(err && err.message || err).slice(0, 60)}). ${t('fromFiles')}`); }
       drawPhotos(); continue;
     }
     try {
@@ -669,13 +713,22 @@ document.addEventListener('change', async e => {
       form.photos.push({ id: uid(), blob, thumb, ext: 'jpg' });
     } catch (err) {
       // the phone cannot open this picture format: the file is kept as it is, without a preview, rather than lost
+      note(`photo not decoded: ${String(err && err.message || err)}`);
       if (f.size <= MAX_RAW) { form.photos.push({ id: uid(), blob: await ownCopy(f), thumb: '', ext: fileExt(f, 'jpg') }); toast(`${t('rawPhoto')} (${sizeTxt(f)})`); }
       else toast(`${t('badPhoto')} (${sizeTxt(f)})`);
     }
     drawPhotos();
-  }
-  e.target.value = ''; drawPhotos();
+  } catch (err) {      // the phone gave the file's name but not its content
+    note(`file refused: ${fileTxt(f)} ${String(err && err.message || err)}`);
+    form.readFail = true; const l = $('#fAnyLink'); if (l) l.style.display = '';
+    toast(`${t('badPhoto')} (${sizeTxt(f)}; ${String(err && err.message || err).slice(0, 60)}). ${t('fromFiles')}`);
+  } }
+  try { input.value = ''; } catch (err) { /* the form was redrawn meanwhile */ }
+  drawPhotos();
+  note(`on the form now: ${form ? form.photos.length : '-'} (was ${had})`);
 });
+// the picker was closed without choosing
+document.addEventListener('cancel', e => { if (e.target && ['fFiles', 'fCam', 'fVid', 'fAny'].includes(e.target.id)) note(`${e.target.id}: closed without a file`); }, true);
 document.addEventListener('submit', async e => {
   e.preventDefault();
   if (e.target.id === 'loginForm') {
@@ -697,6 +750,7 @@ document.addEventListener('submit', async e => {
   }
   if (e.target.id === 'find') return openCode($('#code').value);
   if (e.target.id !== 'evalForm') return;
+  note(`save pressed: ${form.photos.length} file(s) ${form.photos.map(p => p.ext + ' ' + (p.blob.size / 1e6).toFixed(1)).join(', ')}${form.editId ? ' (edit)' : ''}`);
   readForm();
   const keys = LAYOUT[form.stage + '/' + form.kind], vals = {};
   for (const k of keys) {
@@ -745,5 +799,6 @@ setInterval(sync, 60000);
 if ('serviceWorker' in navigator && !MOCK) navigator.serviceWorker.register('sw.js').catch(() => {});
 
 render();
+note(`start v${VER} ${curLang()} ${navigator.onLine ? 'online' : 'offline'} ${(navigator.connection && (navigator.connection.type || navigator.connection.effectiveType)) || ''} waiting ${B.evals.length}+${B.photos.length}`);
 if (B.token) { thumbsLoad(myTeam()); loadCodes(); sync(); }
 try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* not offered on this phone */ }
